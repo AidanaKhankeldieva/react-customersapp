@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Intro to JavaScript Homework</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+
+  <link rel="stylesheet" href="homework.css">
+
+  <script src="../assets/js/jquery-1.8.2.min.js"></script>
+  <script type="text/javascript">
+    // Powers show/hide buttons.
+    $( document ).ready(function() {
+      $("div.codebox").hide();
+    });
+    function showSolution(num) {
+      $("div#example" + num + "Code").toggle();
+    }
+  </script>
+  <style type="text/css">
+    button {
+      margin-bottom: 1.5em;
+    }
+		header h1{
+			margin-left: 25px;
+		}
+  </style>
+
+  <!--[if lt IE 9]> <script src="dist/js/html5shiv.js"></script> <![endif]-->
+</head>
+<body>
+
+  <div class="container main">
+
+    <article id="main-content" tabindex="-1" class="span9">
+      <section>
+        <h2 id="class1">Class 1</h2>
+        <h3>The Fortune Teller</h3>
+        <p>Why pay a fortune teller when you can just program your fortune yourself?</p>
+        <ul>
+          <li>Store the following into variables: number of children, partner's name, geographic location, job title.</li>
+          <li>Output your fortune to the screen like so: "You will be a X in Y, and married to Z with N kids."</li>
+        </ul>
+
+        <!--<button onclick="showSolution(1)">Show/Hide Solution</button>-->
+        <div class="codebox" id="example1Code">
+<pre>var numKids  = 5;
+var partner  = 'David Beckham';
+var geolocation = 'Costa Rica';
+var jobTitle = 'web developer';
+
+var future = 'You will be a ' + jobTitle + ' in ' + geolocation + ', and married to ' +
+partner + ' with ' + numKids + ' kids.';
+console.log(future);
+</pre>
+        </div>
+
+        <h3>The Age Calculator</h3>
+        <p>Forgot how old someone is? Calculate it!</p>
+        <ul>
+          <li>Store the current year in a variable.</li>
+          <li>Store their birth year in a variable.</li>
+          <li>Calculate their 2 possible ages based on the stored values.</li>
+          <li>Output them to the screen like so: "They are either NN or NN", substituting the values.</li>
+        </ul>
+
+        <!--<button onclick="showSolution(1)">Show/Hide Solution</button>-->
+        <div class="codebox" id="example2Code">
+<pre>var birthYear = 1984;
+var currentYear  = 2016;
+var age  = currentYear - birthYear;
+console.log('They are either ' + age + ' or ' + (age - 1));
+</pre>
+        </div>
+
+        <h3>The Temperature Converter</h3>
+        <p>Let's make a program to convert celsius tempatures to fahrenheit and vice versa, so we can complain about the weather with our friends oversees.</p>
+        <p><strong>Reminder:</strong> To convert celsius to fahrenheit, multiply by 9, then divide by 5, then add 32. To convert fahrenheit to celsius, deduct 32, then multiply by 5, then divide by 9.</p>
+        <p><strong>Unicode Characters:</strong> To print the degrees symbol in JavaScript, we need to use the write <code>\u00B0</code> to represent the unicode character for the degress symbol.
+        <ul>
+          <li>Store a celsius temperature into a variable.</li>
+          <li>Convert it to fahrenheit and output "NN°C is NN°F".</li>
+          <li>Now store a fahrenheit temperature into a variable.</li>
+          <li>Convert it to celsius and output "NN°F is NN°C."</li>
+        </ul>
+
+        <!--<button onclick="showSolution(3)">Show/Hide Solution</button>-->
+        <div class="codebox" id="example3Code">
+<pre>var inputCelsius  = 25;
+var outputFahrenheit = (inputCelsius * 9)/5 + 32;
+console.log(inputCelsius + '\u00B0 Celsious is ' + outputFahrenheit + '\u00B0 Fahrenheit');
+
+var inputFahrenheit  = 73;
+var outputCelsius = (inputFahrenheit - 32)/9 * 5;
+console.log(inputFahrenheit + '\u00B0 Fahrenheit is ' + outputCelsius + '\u00B0 Celsious.');
+</pre>
+        </div>
+
+        <h3>Challenge Question: Using Math functions</h3>
+        <p>JavaScript has a built-in tool that can generate a random number between 0 and 1. This tool is called a <em>method</em>. We'll talk about methods more later in the class. For now, know if you type <code>Math.random()</code>, you'll get a random number between 0 and 1.</p>
+
+        <p>Using this tool, update your fahrenheit to celsius tempature conversion program to do the following:</p>
+        <ul>
+          <li>Instead of inputing a value for the Fahrenheit tempature, use Math.random() to generate a random tempature between 0 and 100</li>
+          <li>Have to program output: "It is NN°F today. That's NN°C."
+        </ul>
+
+        <!--<button onclick="showSolution(4)">Show/Hide Solution</button>-->
+        <div class="codebox" id="example4Code">
+<pre>var inputFahrenheit  = Math.random()*100;
+var outputCelsius = (inputFahrenheit - 32)/9 * 5;
+console.log('It is ' + inputFahrenheit + '\u00B0 Fahrenheit today. That\'s ' + outputCelsius + '\u00B0 Celsius.');
+</pre>
+        </div>
+      </section>
+
+
+    </article>
+
+    <aside class="span12 break clear">
+        <h2>References</h2>
+        <ul>
+            <li><a href="https://www.khanacademy.org/computing/computer-programming/programming" target="_blank">Khan Academy - Intro to JS: Drawing &amp; Animation</a></li>
+            <li><a href="http://www.codecademy.com/en/tracks/javascript" target="_blank">Code Academy - JavaScript</a></li>
+        </ul>
+    </aside>
+  </div>
+</body>
+</html>

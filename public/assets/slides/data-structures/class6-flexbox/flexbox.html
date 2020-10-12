@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Flexbox</title>
+		<meta name="author" content="Seytech">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<link rel="stylesheet" href="../../assets/css/reveal.min.css">
+    <!-- <link rel="stylesheet" href="../../assets/css/theme/simple.css" id="theme"> -->
+    <link rel="stylesheet" href="../../assets/css/simple.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<!-- light editor<link rel="stylesheet" href="lib/css/light.css">-->
+		<!-- dark editor--><link rel="stylesheet" href="../../assets/css/light.css">
+
+		<script src="../assets/js/html5shiv.js"></script>
+
+    <!--SHOW EXAMPLES FROM THIS LINK:  https://www.quackit.com/css/flexbox/examples/  -->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+			  <!-- Opening slide -->
+        <section>
+          <h1>Flexbox</h1>
+        </section>
+
+
+        <section>
+          <h1>Requirements</h1>
+          <a href="https://codepen.io/">Open Codepen</a>
+          <p>HTML: </p>
+          <pre><code class="html" contenteditable>
+            <div id="container">
+              <!--   Container -->
+                <!--   items -->
+                <div id="item1">item1</div>
+                <div id="item2">item2</div>
+                <div id="item3">item3</div>
+              </div>
+          </code></pre>
+        </section>
+
+        <section>
+          <p>CSS: </p>
+          <pre><code class="html" contenteditable>
+            #container {
+              height: 200px;
+              width: 600px;
+              border: 1px solid rgba(1,1,1,0.4);
+              background-color: rgba(1,1,1,0.1);
+            #item1 {
+              height: 60px;
+              width: 60px;
+              border: 1px solid red;
+            #item2 {
+              height: 60px;
+              width: 60px;
+              border: 1px solid blue;
+            #item3 {
+              height: 60px;
+              width: 60px;
+              border: 1px solid orange;
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>What is Flexbox?</h2>
+          <p><strong>Flexbox</strong> provides a more efficient way to lay out,<br> align and distribute space among items in a container, <br>
+            even when their size is unknown/dynamic </p>
+        </section>
+
+        <section>
+          <h2>Overview</h2>
+          <p>The job of a flex container is to group a bunch of flex items together and define how they’re positioned</p>
+          <img src="../../assets/img/flexbox/flexbox.png" alt="flexbox-image"/>
+        </section>
+        <section>
+          <h2>History and Basics</h2>
+          <ul>
+            <li class="fragment">Developed alternative to <strong>Floats</strong> to break out its limitations</li>
+            <li class="fragment">Well designed for small sized applications</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Floats vs Flexbox</h2>
+          <img src="../../assets/img/flexbox/floats-vs-flexbox.png" alt="floats vs flexbox"/>
+        </section>
+
+        <section>
+          <h2>How to start using it?</h2>
+          <p><strong> Simple. </strong> <br>
+             By turning any of our HTML elements into a flex container </p>
+          <p>Then, all children of the container become flex items.</p>
+          <pre><code class="html" contenteditable> display: flex </code></pre>
+        </section>
+
+        <section>
+          <h2>Layout</h2>
+          <p>The CSS flexbox has two axes: <strong class="green">the main</strong> and <strong class="green">the cross</strong></p>
+          <img src="../../assets/img/flexbox/flexbox-direction.png" alt="flex direction"/>
+        </section>
+
+        <section>
+          <h2>flex-direction</h2>
+          <p> You define main axis with <code> flex direction </code> property</p>
+          <pre><code class="html" contenteditable> flex-direction: row | row-reverse | column | column-reverse; </code></pre>
+          <img src="../../assets/img/flexbox/flexbox-direction2.png" alt="flex direction 2"/>
+        </section>
+
+        <section>
+          <h2>flex-wrap</h2>
+          <p>By default, flex items will all try to fit onto one line</p>
+          <p>It determines whether overflow should be wrapped or not</p>
+          <pre><code class="html" contenteditable> flex-wrap: nowrap | wrap | wrap-reverse; </code></pre>
+          <img src="../../assets/img/flexbox/flex-wrap.png" alt="flex wrap"/>
+        </section>
+
+        <section>
+          <h2>justify-content</h2>
+          <p>justify-content property sets how browsers handle space surrounding and between elements along the main axis</p>
+          <pre><code class="html" contenteditable> justify-contet: flex-start | flex-end | center | space-between | space-around | space-evenly | start | end | left | right </code></pre>
+          <img src="../../assets/img/flexbox/justify-content.png" alt="jc"/>
+        </section>
+
+        <section>
+          <h2>align-items</h2>
+          <p>This defines the default behavior for how flex items are laid out along the cross axis on the current line</p>
+          <p>Think of it as the justify-content version for the cross axis (perpendicular to the main-axis) </p>
+          <pre><code class="html" contenteditable> align-items: stretch | flex-start | flex-end | center | baseline | first baseline | last baseline | start | end | self-start | self-end </code></pre>
+        </section>
+
+        <section>
+          <h2>align-items</h2>
+          <img src="../../assets/img/flexbox/align-items.png" alt="align items"/>
+        </section>
+
+        <section>
+          <h2>align-content</h2>
+          <p>It is similar to align-items, but it aligns lines of items within a container. It works along the cross axis</p>
+          <pre><code class="html" contenteditable> align-content: flex-start | flex-end | center | space-between | space-around | space-evenly | stretch | start | end | baseline | first baseline | last baseline </code></pre>
+          <img src="../../assets/img/flexbox/align-content.png" alt="align content"/>
+        </section>
+
+        <section>
+          <h2>order</h2>
+          <p>By default, flex items in the container appear in the same order in which they come in code (source order)</p>
+          <p>You can change this sequence with the order property</p>
+          <pre><code class="html" contenteditable>
+            .item {
+                order: integer; /* default is 0 */
+            }
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>flex-grow</h2>
+          <p>It defines how much a flex item expands in relation to other items (if there is available space for that)</p>
+          <p>Negative numbers don’t work for this property</p>
+          <pre><code class="html" contenteditable>
+            .item {
+                flex-grow: number; /* default 0 */
+              }
+         </code></pre>
+          <img src="../../assets/img/flexbox/flex-grow.png" alt="flex grow"/>
+        </section>
+
+        <section>
+          <h2>flex-shrink</h2>
+          <p>This defines the ability for a flex item to shrink if necessary</p>
+          <p>Negative numbers don’t work for this property</p>
+          <pre><code class="html" contenteditable>
+            .item {
+                flex-shrink: number; /* default 1 */
+              }
+         </code></pre>
+        </section>
+
+        <section>
+          <h2>flex-basis</h2>
+          <p>The flex-basis property defines the initial size of a flex item. It accepts length units or percentages </p>
+          <p>Negative numbers don’t work for this property</p>
+          <pre><code class="html" contenteditable>
+            .item {
+              flex-basis: length | auto; /* default auto */
+              }
+         </code></pre>
+        </section>
+
+        <section>
+          <h2>flex</h2>
+          <p>This is the shorthand for <strong>flex-grow</strong>, <strong>flex-shrink </strong>
+            and <strong>flex-basis</strong> combined.</p>
+          <p>flex-shrink and flex-basis are optional. Default is 0 1 auto</p>
+          <pre><code class="html" contenteditable>
+            .item {
+              flex: none | flex-grow flex-shrink ? || flex-basis
+            }
+         </code></pre>
+        </section>
+
+        <section>
+          <h2>align-self</h2>
+          <p>This allows the default alignment (or the one specified by align-items) to be overridden for individual flex items</p>
+          <pre><code class="html" contenteditable>
+            .item {
+              align-self: auto | flex-start | flex-end | center | baseline | stretch;
+            }
+         </code></pre>
+          <img src="../../assets/img/flexbox/align-self.png" alt="align self"/>
+        </section>
+
+        <section>
+          <h2>Note</h2>
+          <ul>
+            <li class="fragment">float</li>
+            <li class="fragment">vertical-align</li>
+            <li class="fragment">clear</li>
+          </ul>
+          <p>have no effect on a flex item</p>
+        </section>
+
+        <section>
+          <h2>Thanks!</h2>
+        </section>
+
+      </div>
+      <!-- <footer style="margin-left: 1rem;">
+         Seytech Slides
+      </footer> -->
+		</div>
+
+
+		<script src="../../assets/js/head.min.js"></script>
+		<script src="../../assets/js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: '../assets/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../assets/plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../assets/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../assets/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../assets/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: '../assets/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+    </script>
+
+    <!--Specific to terminal-->
+   <script src="../../assets/lib/js/classList.js"></script>
+   <script src="../../assets/lib/js/head.min.js"></script>
+   <script src="../../assets/lib/js/html5shiv.js"></script>
+
+	<script>
+		// Full list of configuration options available here:
+		// https://github.com/hakimel/reveal.js#configuration
+		Reveal.initialize({
+			controls: true,
+			progress: true,
+			history: true,
+			center: true,
+
+			transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+			// Optional reveal.js plugins
+			dependencies: [{
+				src: 'lib/js/classList.js',
+				condition: function() {
+					return !document.body.classList;
+				}
+			}, {
+				src: 'plugin/markdown/marked.js',
+				condition: function() {
+					return !!document.querySelector('[data-markdown]');
+				}
+			}, {
+				src: 'plugin/markdown/markdown.js',
+				condition: function() {
+					return !!document.querySelector('[data-markdown]');
+				}
+			}, {
+				src: 'plugin/highlight/highlight.js',
+				async: true,
+				condition: function() {
+					return !!document.querySelector('pre code');
+				},
+				callback: function() {
+					hljs.initHighlightingOnLoad();
+				}
+			}, {
+				src: 'plugin/zoom-js/zoom.js',
+				async: true
+			}, {
+				src: 'plugin/notes/notes.js',
+				async: true
+			}, {
+				src: 'plugin/accessibility-helper/js/accessibility-helper.js',
+				async: true,
+				condition: function() {
+					return !!document.body.classList;
+				}
+			}]
+		});
+	</script>
+
+	</body>
+</html>

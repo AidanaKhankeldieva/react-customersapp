@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Seytech</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../style.css">
+    <link href="../../assets/css/prism/prism.css" rel="stylesheet" />
+    <script src="../../assets/css/prism/prism.js"></script>
+</head>
+
+<body>
+    <main role="main">
+        <!-- Main jumbotron for a primary marketing message or call to action -->
+        <div class="jumbotron">
+            <div class="container">
+                <h4 class="display-5">React Interview questions</h4>
+            </div>
+        </div>
+        <div>
+            <span class="badge badge-primary">react</span>
+            <span class="badge badge-primary">react intl</span>
+        </div>
+        <div class="box">
+            <div class="text">
+                <h5> 1) What is React-Intl?
+                    <span class="float-right badge badge-pill badge-primary">react-intl</span>
+                </h5>
+                <pre class="pre">
+                    <code class="language-markup">
+                        The React Intl library makes internalization in React straightforward, with off-the-shelf components 
+                        and an API that can handle everything from formatting strings, dates, and numbers, to pluralization. 
+                        React Intl is part of FormatJS which provides bindings to React via its components and API.
+                    </code>
+                </pre>
+            </div>
+        </div>
+        <div class="box">
+            <div class="text">
+                <h5> 2) What are the main features of React Intl?
+                    <span class="float-right badge badge-pill badge-primary">react-intl</span>
+                </h5>
+                <pre class="pre">
+                    <code class="language-markup">
+                        Below are the main features of React Intl,
+
+                            - Display numbers with separators.
+                            - Display dates and times correctly.
+                            - Display dates relative to "now".
+                            - Pluralize labels in strings.
+                            - Support for 150+ languages.
+                            - Runs in the browser and Node.
+                            - Built on standards.
+                    </code>
+                </pre>
+            </div>
+        </div>
+        <div class="box">
+            <div class="text">
+                <h5> 3) What are the two ways of formatting in React Intl?
+                    <span class="float-right badge badge-pill badge-primary">react-intl</span>
+                </h5>
+                <pre class="pre">
+                    <code class="language-markup">
+                        The library provides two ways to format strings, numbers, and dates:
+
+                        Using react components:
+                        
+                        &lt;FormattedMessage
+                          id={'account'}
+                          defaultMessage={'The amount is less than minimum balance.'}
+                        />
+                        2. **Using an API:**
+                        
+                             ```javascript
+                             const messages = defineMessages({
+                               accountMessage: {
+                                 id: 'account',
+                                 defaultMessage: 'The amount is less than minimum balance.',
+                               }
+                             })
+                        
+                             formatMessage(messages.accountMessage)
+                             ```
+                    </code>
+                </pre>
+            </div>
+        </div>
+        <div class="box">
+            <div class="text">
+                <h5> 4) How to use &lt;FormattedMessage> as placeholder using React Intl?
+                    <span class="float-right badge badge-pill badge-primary">react-intl</span>
+                </h5>
+                <pre class="pre">
+                    <code class="language-markup">
+                        The &lt;Formatted... /> components from react-intl return elements, not plain text, so they can't be used for placeholders, alt text, etc. In that case, you should use lower level API formatMessage(). You can inject the intl object into your component using injectIntl() higher-order component and then format the message using formatMessage() available on that object.
+
+                            import React from 'react'
+                            import { injectIntl, intlShape } from 'react-intl'
+                            
+                            const MyComponent = ({ intl }) => {
+                            const placeholder = intl.formatMessage({id: 'messageId'})
+                            return &lt;input placeholder={placeholder} />
+                            }
+                            
+                            MyComponent.propTypes = {
+                            intl: intlShape.isRequired
+                            }
+                            
+                            export default injectIntl(MyComponent)
+                    </code>
+                </pre>
+            </div>
+        </div>
+        <div class="box">
+            <div class="text">
+                <h5> 5) How to access current locale with React Intl?
+                    <span class="float-right badge badge-pill badge-primary">react-intl</span>
+                </h5>
+                <pre class="pre">
+                    <code class="language-markup">
+                        You can get the current locale in any component of your application using injectIntl():
+
+                            import { injectIntl, intlShape } from 'react-intl'
+                            
+                            const MyComponent = ({ intl }) => (
+                                &lt;div>{`The current locale is ${intl.locale}`}&lt;/div>
+                            )
+                            
+                            MyComponent.propTypes = {
+                                intl: intlShape.isRequired
+                            }
+                            
+                            export default injectIntl(MyComponent)
+                    </code>
+                </pre>
+            </div>
+        </div>
+        <div class="box">
+            <div class="text">
+                <h5> 6) How to format date using React Intl?
+                    <span class="float-right badge badge-pill badge-primary">react-intl</span>
+                </h5>
+                <pre class="pre">
+                    <code class="language-markup">
+                        The injectIntl() higher-order component will give you access to the formatDate() method via the props in your component. 
+                        The method is used internally by instances of FormattedDate and it returns the string representation of the formatted date.
+
+                            import { injectIntl, intlShape } from 'react-intl'
+                            
+                            const stringDate = this.props.intl.formatDate(date, {
+                            year: 'numeric',
+                            month: 'numeric',
+                            day: 'numeric'
+                            })
+                            
+                            const MyComponent = ({intl}) => (
+                                &lt;div>{`The formatted date is ${stringDate}`}&lt;/div>
+                            )
+                            
+                            MyComponent.propTypes = {
+                            intl: intlShape.isRequired
+                            }
+                            
+                            export default injectIntl(MyComponent)
+                    </code>
+                </pre>
+            </div>
+        </div>
+
+        <br />
+        <br />
+
+        <script>
+            // https://syndicode.com/2019/01/09/33-concepts-every-js-developer-should-know/
+            //https://scotch.io/courses/10-need-to-know-javascript-concepts/the-this-keyword
+            //https://javascript.info/
+
+            function toggle(e) {
+                if (e.currentTarget.querySelector('.pre').style.display === 'none') {
+                    e.currentTarget.querySelector('.pre').style.display = 'block'
+                } else {
+                    e.currentTarget.querySelector('.pre').style.display = 'none'
+                }
+            }
+            const boxes = document.getElementsByClassName('box');
+            for (let i = 0; i < boxes.length; i++) {
+                boxes[i].addEventListener('click', toggle);
+                boxes[i].querySelector('.pre').style.display = 'none';
+                boxes[i].querySelector('.pre').style.display = 'none'
+            }
+        </script>
+    </main>
+</body>
+
+</html>

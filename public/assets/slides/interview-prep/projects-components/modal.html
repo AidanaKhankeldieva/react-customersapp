@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Modal</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+
+  <link rel="stylesheet" href="../homework.css">
+
+  <script src="../../assets/js/jquery-1.8.2.min.js"></script>
+  <script type="text/javascript">
+    // Powers show/hide buttons.
+    $( document ).ready(function() {
+      $("div.codebox").hide();
+    });
+    function showSolution(num) {
+      $("div#example" + num + "Code").toggle();
+    }
+  </script>
+  <style type="text/css">
+    button {
+      margin-bottom: 1.5em;
+    }
+		header h1{
+			margin-left: 25px;
+		}
+  </style>
+
+  <!--[if lt IE 9]> <script src="dist/js/html5shiv.js"></script> <![endif]-->
+</head>
+<body>
+
+  <div class="container main">
+
+    <article id="main-content" tabindex="-1" class="span9">
+      <section>
+        <h2>Modal</h2>
+        <img class="github-image" src="https://raw.githubusercontent.com/seytechschool/saturday-projects/master/javascript/modal/images/modal.png" />
+        <ul>
+          <li>Fork the repository <a target="_blank" href="https://github.com/seytechschool/saturday-projects">Saturday Projects</a></li>
+          <li>Github page of this project  <a target="_blank" href="https://github.com/seytechschool/saturday-projects/tree/master/javascript/modal">Modal</a></li>
+          <li>Download the source code from the forked repository</li>
+          <li>Start working on</li>
+        </ul>
+
+        <hr/>
+        <h3>What You Should See</h3>
+        <ul>
+          <li>Click button to open modal.</li>
+          <li>If a user clicks close button or anywhere except modal it should close.</li>
+        </ul>
+
+        <hr/>
+        <h3>How to do it</h3>
+        <ul>
+          <li>First commit should be html/css code</li>
+          <li>Second commit should be a js functions</li>
+          <li>Create a pull request when you are done</li>
+        </ul>
+        <hr/>
+
+        <h3>Extra Challenges</h3>
+        <ul>
+          <li>Optional. Modal suppose to animate from top to mid while coming and going back</li>
+        </ul>
+
+        <hr/>
+        <h3>Video</h3>
+        <iframe width="850" height="470" src="https://www.youtube.com/embed/mnHPRlMTVRQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+        <hr/>
+        <h3>Given Data</h3>
+        <ul>
+          <li>Modal BG color: <pre>#fefefe</pre></li>
+          <li>Modal header,footer text color: <pre>#0d99a5</pre></li>
+        </ul>
+
+
+        <h3>Hints</h3>
+        <button onclick="showSolution(1)">Show/Hide Hint 1</button>
+        <div class="codebox" id="example1Code">
+<pre>
+  It will easier if you create html/css as it's shown in the picture first.
+</pre>
+        </div>
+
+
+        <button onclick="showSolution(2)">Show/Hide Hint 2</button>
+        <div class="codebox" id="example2Code">
+        <pre>
+          You need to use position fixed to create a modal.
+        </pre>
+        </div>
+
+        <button onclick="showSolution(3)">Show/Hide Hint 3</button>
+        <div class="codebox" id="example3Code">
+        <pre>
+          Background color of modal is tricky. You can't use opacity to whole modal, it will change the opacity of whole modal. You can create a new element just for that one.
+        </pre>
+        </div>
+
+        <button onclick="showSolution(4)">Show/Hide Hint 4</button>
+        <div class="codebox" id="example4Code">
+        <pre>
+          You need 2 functions to open and close
+        </pre>
+        </div>
+
+        <button onclick="showSolution(5)">Show/Hide Hint 5</button>
+        <div class="codebox" id="example5Code">
+        <pre>
+          Closing when you click outside of modal is tricky. You can check if clicked element is not a modal. (Remember how to check what is the clicked element in js)
+        </pre>
+        </div>
+
+        <button onclick="showSolution(6)">Show/Hide Hint 6</button>
+        <div class="codebox" id="example6Code">
+        <pre>
+          You have to animate and remove modal after it. In order to do something after sometime you can use setTimeout.
+        </pre>
+        </div>
+
+<br/><br/><br/><br/><br/><br/>
+
+  </div>
+</body>
+</html>

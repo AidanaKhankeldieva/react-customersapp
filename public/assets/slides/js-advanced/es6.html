@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ES6 </title>
+  <meta charset="utf-8">
+  <style>
+      .remark-slide-scaler {
+          width: 100% !important;
+          height: 100% !important;
+          transform: scale(1) !important;
+          left: 0 !important;
+          top: 0 !important;
+      }
+    @import url(https://fonts.googleapis.com/css?family=Droid+Serif);
+    @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+    @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+    body {
+      font-family: 'Droid Serif';
+    }
+    h1, h2, h3 {
+      font-family: 'Yanone Kaffeesatz';
+      font-weight: 400;
+      margin-bottom: 0;
+    }
+    .remark-slide-content h1 { font-size: 3em; }
+    .remark-slide-content h2 { font-size: 2em; }
+    .remark-slide-content h3 { font-size: 1.6em; }
+    .footnote {
+      position: absolute;
+      bottom: 3em;
+    }
+    li p { line-height: 1.25em; }
+    .red { color: #fa0000; }
+    .large { font-size: 2em; }
+    a, a > code {
+      color: rgb(249, 38, 114);
+      text-decoration: none;
+    }
+    code {
+      background: #e7e8e2;
+      border-radius: 5px;
+    }
+    .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+    .remark-code-line-highlighted     { background-color: #373832; }
+    .pull-left {
+      float: left;
+      width: 47%;
+    }
+    .pull-right {
+      float: right;
+      width: 47%;
+    }
+    .pull-right ~ p {
+      clear: both;
+    }
+    #slideshow .slide .content code {
+      font-size: 0.8em;
+    }
+    #slideshow .slide .content pre code {
+      font-size: 0.9em;
+      padding: 15px;
+      background-color: #272822;
+
+    }
+    .remark-code {
+      font-size: 0.9em;
+      padding: 15px;
+      background-color: #000 !important;
+
+      color: white;
+
+    }
+    .remark-code-line {
+      color: #ddd;
+    } .hljs-subst {
+      color: #aaa !important;
+    }
+    .inverse {
+      background: #272822;
+      color: #777872;
+      text-shadow: 0 0 20px #333;
+    }
+
+    .hljs-number, .hljs-title, .hljs-string {
+      color: #f92672 !important;
+    }
+    .hljs-keyword {
+      color: lightgreen !important;
+    }
+
+    .inverse h1, .inverse h2 {
+      color: #f3f3f3;
+      line-height: 0.8em;
+    }
+
+    /* Slide-specific styling */
+    #slide-inverse .footnote {
+      bottom: 12px;
+      left: 20px;
+    }
+    #slide-how .slides {
+      font-size: 0.9em;
+      position: absolute;
+      top:  151px;
+      right: 140px;
+    }
+    #slide-how .slides h3 {
+      margin-top: 0.2em;
+    }
+    #slide-how .slides .first, #slide-how .slides .second {
+      padding: 1px 20px;
+      height: 90px;
+      width: 120px;
+      -moz-box-shadow: 0 0 10px #777;
+      -webkit-box-shadow: 0 0 10px #777;
+      box-shadow: 0 0 10px #777;
+    }
+    #slide-how .slides .first {
+      background: #fff;
+      position: absolute;
+      top: 20%;
+      left: 20%;
+      z-index: 1;
+    }
+    #slide-how .slides .second {
+      position: relative;
+      background: #fff;
+      z-index: 0;
+    }
+
+    /* Two-column layout */
+    .left-column {
+      color: #777;
+      width: 20%;
+      height: 92%;
+      float: left;
+    }
+    .left-column h2:last-of-type, .left-column h3:last-child {
+      color: #000;
+    }
+    .right-column {
+      width: 75%;
+      float: right;
+      padding-top: 1em;
+    }
+  </style>
+</head>
+<body>
+<textarea id="source">
+
+name: inverse
+layout: true
+class: center middle inverse
+# ECMAScript
+
+---
+
+---
+name: code
+layout: true
+class:code
+
+---
+# ECMAScript
+- ECMAScript is the standard
+- Javascript is an implementation of that standard
+- ES6 is the 6th implementation of ECMAScript (2015)
+- Prior to this class we mostly used v5 and v5.1 
+- Babel converts ES6 Code to ES5 Code in browser (compatibality) and so on...
+---
+# ES6
+- Syntax Changes (syntactic sugar)
+- New features 
+- Superset of ES5
+
+---
+# Arrow Functions
+- Syntactically compact alternative to a regular function expression, although without its own bindings to the "this"
+- Arrow function expressions are ill suited as methods, and they cannot be used as constructors
+
+```javascript
+
+// Before
+function myFunction() {
+  // do something
+}
+var myFunction = () => {
+  // do something
+}
+
+```
+
+---
+# Arrow Functions
+
+```javascript
+  // Before...
+
+  var square = function(x) {
+    return x * 2;
+  };
+
+  square(2) //4
+```
+
+```javascript
+  // After...
+
+  var square = x => x * x;
+
+  square(2) //4
+```
+
+```javascript
+  function() {} == () => {}
+
+  function() {return 10} == () => 10
+
+  function(x) {return x} == x => x
+
+```
+
+---
+# Arrow Functions
+```javascript
+  // Before...
+
+  function counter() {
+    this.seconds = 0;
+   setInterval(function() {
+     this.seconds++;
+     console.log(this.seconds)
+   }.bind(this), 1000);
+ }
+```
+
+```javascript
+  // After...
+
+  function counter() {
+    this.seconds = 0;
+   setInterval(() => {
+     this.seconds++;
+     console.log(this.seconds)
+   }, 1000);
+ }
+```
+
+---
+## Your turn
+- Convert below code into es6
+
+```javascript
+
+function getData () {
+  return fetch('https://example.com/)
+    .then(function (response) {
+      return response.json()
+    })
+    .then(function (response) {
+      return response.data
+    }).then(function (data) {
+      console.log(data)
+    })
+}
+
+```
+
+---
+# Array Helper Methods
+##### Lets see syntax differences of some of these built-in methods:
+- forEach
+- map
+- filter
+- find
+- every
+- some
+- reduce
+
+---
+## forEach Example
+
+```javascript
+var colors = ['red', 'blue', 'green'];
+// regular for loop (prone to typo)
+for(var i = 0; i < colors.length; i++) {
+  console.log(colors[i])
+}
+// ES5 
+colors.forEach(function(color) {
+  console.log(color)
+})
+// ES6 
+colors.forEach((color) => {
+  console.log(color);
+})
+
+```
+
+---
+## map Example
+
+```javascript
+var colors = ['red', 'blue', 'green'];
+// regular for loop (prone to typo)
+for(var i = 0; i < colors.length; i++) {
+  console.log(colors[i] + "ish")
+}
+// ES5 
+colors.map(function(color) {
+  return color + "ish"
+})
+// ES6 
+colors.map((color) => {
+  return color + "ish";
+})
+
+```
+
+---
+## filter Example
+
+```javascript
+var colors = ['red', 'blue', 'green'];
+// regular for loop (prone to typo)
+var result = []
+for(var i = 0; i < colors.length; i++) {
+  colors[i] === 'green' ? result.push(colors[i]): null
+}
+console.log(result)
+
+// ES5 
+colors.filter(function(color) {
+  return color === 'blue'
+})
+// ES6 
+colors.filter((color) => {
+  return color === 'red';
+})
+
+```
+
+---
+## reduce Example
+- some, every are same to map, filter in terms of syntax so we going to continue with reduce method
+
+```javascript
+var numbers = [10, 20, 30];
+var sum = 0;
+// regular for loop (prone to typo)
+for(var i = 0; i < numbers.length; i++) {
+  sum += numbers[i]
+}
+// ES5 
+numbers.reduce(function(sum, number) {
+  return sum + number
+}, 0)
+// ES6 
+numbers.forEach((sum, number) => {
+  return sum + number
+}, 0)
+
+```
+
+---
+## Your turn
+- Find the repeated numbers inside an array
+- hint: use reduce with es6 syntax
+
+```javascript
+const numbers = [1, 2, 6, 1, 6, 9, 4, 12, 18, 7];
+
+
+```
+
+---
+# Block Scoping   &&  const / let
+
+- Until this time we only been using "var" in order to create variables
+- We know already global and local scopes and how they work with "var"
+- "let and const"  give us the ability to scope information more precisely to individual sections of code, called "block scoping"
+- This gives us greater control over information visibility and allows us to reuse variable names in the same function, but different code blocks, without conflict. A code block is defined by opening and closing curly braces, {}.
+- Let allows reassignment, whereas const value is immutable
+
+---
+# const and let example
+
+```javascript
+
+if (true) {
+    // this 'if' conditional block doesn't create a scope
+
+    // name is in the global scope because of the 'var' keyword
+    var name = 'Ulan';
+    // likes is in the local scope because of the 'let' keyword
+    let likes = 'React';
+    // skills is in the local scope because of the 'const' keyword
+    const skills = 'JavaScript and Angular';
+}
+
+console.log(name); // 'Ulan'
+console.log(likes); // likes is not defined
+console.log(skills); // skills is not defined
+
+```
+
+---
+# const and let example 2
+
+```javascript
+
+function count(targetString) {
+  const characters = ['a', 'b', 'c', 'd'];
+  let number = 0;
+
+  for(let i = 0; i < targetString.length; i++) {
+    if(characters.includes(targetString[i])) {
+      number++;
+    }
+  }
+  return number;
+}
+count('abcdedcgasdesaeqa');
+```
+- as you can engineer reading the code from first glance understands that 'characters' won't change throughout the code but 'number' may change.
+
+
+---
+# Your Turn 
+Assignment: The following code uses 'var' instead of 'const' and 'let'. Refactor the function to use the new keywords. 
+Be sure to consider whether the variable should be declared using 'const' or 'let' depending on whether the variable gets reassigned or not.
+
+```javascript
+
+var statuses = [ 
+  { code: 'OK', response: 'Request successful' },
+  { code: 'FAILED', response: 'There was an error with your request' },
+  { code: 'PENDING', response: 'Your reqeust is still pending' }
+];
+var message = '';
+var currentCode = 'OK';
+
+for (var i = 0; i < statuses.length; i++) {
+  if (statuses[i].code === currentCode) {
+    message = statuses[i].response;
+    console.log(message);
+  }
+}
+```
+
+---
+# Template Literals/Strings
+- Syntactic sugar to writing our code cleaner
+- Avoid ambiguity of long strings
+- Backticks instead of quotes
+
+```javascript
+
+// Before
+const year  = new Date().getFullYear();
+let str = "The year is " + year;
+
+// After
+let str = `The year is ${ year }`
+// or
+let str =  `The year is ${ new Date().getFullYear() }`; 
+
+```
+
+---
+# Example
+
+```javascript
+
+const greeting = 'Hello'
+const noun = 'World'
+const fullGreeting = `${greeting}, ${noun}!`
+console.log(fullGreeting) // "Hello, World!"
+
+
+// multiline strings
+const multiLine = `
+  <div>
+    <strong>look mah!</strong>
+    <span>HTML in my JS!!!</span>
+  </div>
+`
+```
+---
+# Your Turn 
+Assignment: Refactor the code to use template strings
+```javascript
+let device_id = 10;
+let guid = 4321;
+const data = '{device_id : ' + device_id + ' , ' +  'guid:' + guid + '}' ;
+
+// result: {device_id : 10 , guid:4321}
+
+```
+---
+
+#  Enhanced Object Literal
+```javascript
+  function getUser() {
+    const name = 'Mark';
+    const lastName = 'Twain';
+    const age = 40;
+
+    // Before...
+    return {
+      name: name,
+      lastName: lastName,
+      age: age
+    }
+  }
+  console.log( getUser() ) // { name: 'Mark', lastName: 'Twain', age: 40 }
+```
+```javascript
+  function getUser() {
+    const name = 'Mark';
+    const lastName = 'Twain';
+    const age = 40;
+
+    // After...
+    return {
+      name,
+      lastName,
+      age,
+    }
+  }
+  console.log( getUser() ) // { name: 'Mark', lastName: 'Twain', age: 40 }
+```
+
+---
+# Your Turn 
+Assignment: Using Object Literal shorthand, assign like-named variables to an object
+
+```javascript
+
+const name = "bigBoi";
+const howOld = 1;
+const nickname = "BB";
+const activities = "sleeping";
+
+// Before
+const myPet = {
+  name: name,
+  nickname: nickname,
+  howOld: howOld,
+  activities: activities,
+};
+// After 
+// Your code here
+
+```
+
+---
+#  Destructuring
+
+```javascript
+  // Before...
+  const obj = {name: 'Mark', lastName: 'Twain', age: 40};
+
+  console.log( `Welcome ${obj.name} ${obj.lastName} ${obj.age}`)
+```
+
+```javascript
+  // After...
+  const obj = {name: 'Mark', lastName: 'Twain', age: 40};
+  const {name, lastName, age} = obj
+
+  console.log( `Welcome ${name} ${lastName} ${age}`)
+
+```
+---
+#  Destructuring example
+
+```javascript
+  var savedFiled = {
+    extension: 'jpg',
+    name: 'repost',
+    size: 14043
+  }
+  function fileSummary({ name, extension, size }) {
+    console.log(`The file ${name}.${extension} is of size ${size} `);
+  }
+
+```
+---
+#  Destructuring arrays example
+
+```javascript
+const companies = [
+  'Gooele',
+  'Facebook',
+  'Ulan Ltd Lol'
+]
+const [name] = companies; -- is equal to --> const firstCompany = companies[0]
+```
+
+---
+# Your Turn 
+Assignment: Destrcture the home object and use the "color" key of it.
+// hint: undefined
+
+```javascript
+let home = {price: "200K", location: "Chicago"}
+
+```
+
+---
+#  Parameters
+###  Default Function Arguments
+
+```javascript
+  // Before...
+  function getName(name) {
+    name = name || "Ulan";
+    return name;
+  }
+
+  console.log( getName("Marat") ) // Marat
+  console.log( getName() ) // Ulan
+```
+
+
+```javascript
+  // After...
+  function getName(name = "Ulan") {
+    return name;
+  }
+
+  console.log( getName("Marat") ) // Marat
+  console.log( getName() ) // Ulan
+
+```
+
+---
+#  Rest and Spread Operators
+- Rest parameter: collects all remaining elements into an array.
+- Spread operator: allows iterables( arrays / objects / strings ) to be expanded into single arguments/elements.
+- Both uses ... (three dots)
+- Syntactic sugar (means there are other ways to perform the same task)
+
+###  Capturing args with rest parameters
+```javascript
+// Before
+const sum  = (a,b,c,d,e) => {
+  const numbers = [a, b, c, d, e]
+  return numbers.reduce((sum, number) => {
+    return sum + number;
+  }, 0)
+}
+sum (1,2,6,3,4) 
+// After
+const sum  = (...numbers) => {
+  return numbers.reduce((sum, number) => {
+    return sum + number;
+  }, 0)
+}
+sum (1,2,6,3,4) 
+```
+
+---
+#  Rest and Spread Operators
+###  Rest Parameters Ex1:
+```javascript
+  const num1 = [5, 10, 15];
+  const num2 = [1, ...num1, 20];
+
+  console.log( num2 ) // [1, 5, 10, 15, 20]
+```
+### Ex2:
+```javascript
+
+  let numbers = [9, 4, 7, 1];
+  Math.min(...numbers); // 1
+```
+
+---
+#  Rest and Spread Operators 
+###  Rest Parameters Example
+```javascript
+  const numbers = [5, 10, 50, 100];
+  const [first, ...rest] = numbers;
+
+  console.log( first ) // 5
+  console.log( rest ) // [10, 50, 100]
+```
+
+---
+#  Rest and Spread Operators 
+###  Spread Operator Example
+```javascript
+  const bodyparts = ["legs", "chest", "hands"];
+  const fullpackage = ["head", ...bodyparts];
+  // or
+  const fullpackage = [...bodyparts, "head"];
+  // check for answer on editor
+
+```
+
+---
+#  Your turn
+
+```javascript
+// Task1: how do we add them together ? You can come up with different solutions.
+  const initalColors = ["white", "black", "gray"];
+  const exoticColor = ["purple", "orange", "green"];
+
+  // Task2: Refactor the following to use the spread operator
+    function join(initalColors, exoticColor) {
+      return initalColors.concat(exoticColor);
+    }
+ 
+```
+
+---
+### Classes in JavaScript
+
+- JavaScript is not fully an Object Oriented language
+- JavaScript is a prototype-based language
+- in order to provide OO properties and make inheritence easier classes were introduced
+- React uses a lot of classes
+
+---
+### Class - ES5 Class
+
+```javascript
+ function MyClass() { }
+
+  var myClass = new MyClass();
+```
+---
+### ES5 Class - Constructor
+
+```javascript
+// Person constructor function
+// when called with the "new" operator,
+// a new Person object is created
+
+function Person(firstName, lastName) {
+  // the "new" operator sets the reference of
+  // "this" to a new object
+  this.firstName = firstName;
+  this.lastName = lastName;
+}
+
+var person = new Person MyClass();
+
+```
+---
+### ES5 Class - Prototype
+- JavaScript is often described as a prototype-based language — to provide inheritance. 
+```javascript
+ function Person(firstName, lastName) {
+  this.firstName = firstName;
+  this.lastName = lastName;
+ }
+```
+
+```javascript
+Person.prototype.getFullName = function() {
+  return this.firstName + " " + this.lastName;
+};
+
+// this property referencing the function will
+// be configured on Person's prototype object,
+// and will be inherited by person
+```
+
+---
+
+### Class (ES6)
+ - You create classes with the class keyword
+ - Class declarations that don't use the extends keyword are called base classes
+ - Constructor - This is where you initialize your object's properties.
+```javascript
+ class Person {
+
+      constructor (name, lastName, age) {
+          this.name = name;
+          this.lastName = lastName;
+          this.age = age;
+      }
+
+      sayMyName () {
+        return this.name
+      }
+ }
+```
+---
+
+### Class
+
+```javascript
+ function Person (name, lastName, age) {
+    this.name = name;
+    this.lastName = lastName;
+    this.age = age;
+    this.sayMyName = function() {
+      return this.name
+    }
+  }
+
+  var person = new Person('Mark', 'Twain', 40);
+  person.sayMyName() // "Mark"
+```
+
+```javascript
+ class Person {
+
+  constructor (name, lastName, age) {
+    this.name = name;
+    this.lastName = lastName;
+    this.age = age;
+  }
+
+  sayMyName () {
+    return this.name
+  }
+ }
+
+  const person = new Person('Mark', 'Twain', 40);
+  person.sayMyName() // "Mark"
+```
+
+---
+### Sub Class
+
+```javascript
+ class Person {
+
+  constructor (name, lastName, age) {
+    this.name = name;
+    this.lastName = lastName;
+    this.age = age;
+  }
+
+  sayMyName () {
+    return this.name
+  }
+ }
+```
+
+```javascript
+ class Student extends Person {
+
+  constructor (name, lastName) {
+    super(name, lastName, 18)
+  }
+
+  sayMyLastName () {
+    return this.lastName
+  }
+ }
+
+  const engineer = new Student ('Marat', 'Gaipov');
+  engineer.sayMyName() // "Marat"
+  engineer.sayMyLastName() // "Gaipov"
+```
+
+---
+
+### Static methods
+- Static keyword will create a method associated with the class
+- Not with an instance of the class
+- You can only reach a static method using the name of the class
+
+```javascript
+class Student extends Person {
+  constructor (name, lastName, age) {
+      super(name, lastName, age)
+  }
+  static whoami () {
+    return 'Student'
+  }
+}
+
+var engineer = new Student('ali', 'baba', 20);
+engineer.sayMyName() // engineer.sayMyName is not a function
+Student.sayMyName() // Student
+```
+---
+
+# Your turn
+- You are a game developer tasked with setting up some basic classes for a new game you are working on.
+- Create a class called 'Monster'.
+- In the constructor, you'll need to do some basic setup for Monster whenever they are created.
+- Initialize the Monster's health to 100.
+- The constructor will be called with an 'options' object that has a 'name' property. 
+- Assign the 'name' to the Monster
+
+```javascript
+
+  class Monster {
+    
+  }
+
+```
+
+---
+
+#  Generators
+- Warning: This topic is very confusing for most of engineers. So we won't go deep on this. Just general knowledge is enough
+- We used to iterate over objects, arrays etc,
+- But with genetors we can iterate through different types of data structures
+
+```javascript
+
+const engineeringTeam = {
+  size: 3,
+  department = 'Engineering',
+  manager: 'Marat'
+  lead: 'Janat',
+  engineer: 'Ulan'
+}
+// also reusable code 
+function* TeamIterator(team) {
+  yield team.lead;
+  yield team.manager;
+  yield team.engineer;
+}
+const names = [];
+for (let name of TeamIterator(engineeringTeam) {
+  names.push(name)
+}
+console.log(name) // ['Marat', 'Janat', 'Ulan']
+```
+
+---
+#  Promises 
+- Promieses were available prior to es6 
+- But they were a third party libraries
+- es6 has native implementation of promises
+- It represents the eventual completion (or failure) of an asynchronous operation, and its resulting value.
+
+Promise:
+- 'unresolved': waiting for something to finish
+- 'resolved': somehting finished and it all went ok -> then ->  callback
+- 'rejected': somehting finished and somehting went bad -> catch -> callback
+
+
+```javascript
+  promise = new Promise((resolve, reject) => {
+    resolve();
+    // reject();
+  })
+
+  promise
+    .then(() => console.log('finally finished'))
+    .catch(() => console.log('uh oh'));
+
+```
+
+---
+#  Promises and Fetch
+- fetch is nice
+- but there are more libraries like axios or even jQuery
+
+```javascript
+  url = "https://jsonplaceholder.typicode.com/posts";
+
+  fetch(url)
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.log('error: ', error))
+```
+
+---
+
+#  React Classes
+```javascript
+
+class Contacts extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  handleClick = () => {
+    console.log('Button is clicked!!');
+  };
+
+  render() {
+    return (
+      <button onClick={this.handleClick}></button>
+    );
+  }
+}
+```
+
+#  Thank you 
+### Thats it for es6 !
+
+
+    </textarea>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js">
+</script>
+<script>
+  var slideshow = remark.create({
+    highlightLines: true,
+  });
+</script>
+</body>
+</html>

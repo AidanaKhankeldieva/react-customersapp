@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Class 5 - Data Types - Seytech</title>
+
+    <meta name="author" content="Seytech">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <link rel="stylesheet" href="../assets/css/reveal.min.css">
+    <link rel="stylesheet" href="../assets/css/default.css" id="theme">
+
+    <!-- For syntax highlighting -->
+    <!-- light editor --> <link rel="stylesheet" href="../assets/css/light.css">
+    <!-- dark editor <link rel="stylesheet" href="lib/css/dark.css">-->
+    <!-- <link rel="stylesheet" href="lib/css/zenburn.css">-->
+
+    <link rel="stylesheet" href="../assets/plugin/accessibility-helper/css/accessibility-helper.css">
+    <!--[if lt IE 9]>
+    <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+        <section>
+          <h2>Data Types (Primitive)</h2>
+          <h2>Class 5</h2>
+        </section>
+
+        <!-- What is JavaScript-->
+
+        <section>
+            <h2>What we will cover today ?</h2>
+        </section>
+
+        <section>
+            <img src="../assets/img/datatypes.png" alt="methods"/>
+        </section>
+
+        <section>
+          <h3>Repl</h3>
+          <p>Before going further create a new Repl</p>
+          <p>Where we will be practicing these types</p>
+        </section>
+
+        <section>
+          <h3>JavaScript has primitive data types and object types</h3>
+            <img src="../assets/img/datatypes2.png" alt="js numbers"/>
+        </section>
+
+        <section>
+          <h1>A primitive</h1>
+          <ul>
+            <li>Is a value of a primitive type</li>
+            <li>A single value</li>
+            <li>All primitive values are immutable</li>
+            <li>There are 6 primitive data types</li>
+
+          </ul>
+        </section>
+
+        <section>
+          <h3>6 Primitive Data Types</h3>
+            <ul>
+                <li><code>null</code> - no value</li>
+                <li><code>undefined</code> - a declared variable but hasn’t been given a value</li>
+                <li><code>boolean</code> - true or false</li>
+                <li><code>string</code> - words, text, etc</li>
+                <li><code>number</code> - integers, floats</li>
+                <li><code>symbol</code> - (new in ECMAScript 2015 - ES6)</li>
+            </ul>
+        </section>
+
+        <section>
+          <h1>Booleans</h1>
+          <p>Very often, in programming, you will need a data type that can only have one of two values, like</p>
+          <ul>
+            <li>YES / NO</li>
+            <li>ON / OFF</li>
+            <li>TRUE / FALSE</li>
+          </ul>
+        </section>
+
+        <section>
+          <h1>Booleans</h1>
+          <p>A Boolean represents one of two values: true or false.</p>
+<pre><code>
+  Boolean(10 > 9)        // returns true
+
+  ==	equal to	if (day == "Monday")
+  >	greater than	if (salary > 9000)
+  <	less than	if (age < 18)
+
+</code></pre>
+        </section>
+
+        <section>
+          <h1>Booleans</h1>
+<pre><code>
+  var x = 0;
+  Boolean(x);       // returns false
+
+  var y = "";
+  Boolean(y);       // returns false
+
+  var z;
+  Boolean(z);       // returns false
+
+  var a = null;
+  Boolean(a);       // returns false
+
+</code></pre>
+        </section>
+
+        <section>
+          <h1>Strings</h1>
+          <ul>
+            <li>Strings are used for storing and manipulating text.</li>
+            <li>A string is zero or more characters written inside quotes.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h1>String Methods</h1>
+          <ul>
+            <li>String Length</li>
+            <li>toString(), indexOf(), lastIndexOf()</li>
+          </ul>
+        </section>
+
+        <section>
+          <h4>toString()</h4>
+          <p>The toString() method returns a number as a string</p>
+<pre><code>
+  var x = 123;
+  x.toString();            // returns 123 from variable x
+  (123).toString();        // returns 123 from literal 123
+  (100 + 23).toString();   // returns 123 from expression 100 + 23
+
+</code></pre>
+        </section>
+
+        <section>
+          <h3>Let's Develop It</h3>
+          <ul>
+            <li>Create a function which returns length of a given string</li>
+            <li>Create a function which returns true if given text exist inside a give sentence</li>
+            <li>Create a function which returns last index of a text from a give sentence</li>
+            <li>Create a function which returns how many give character exist in a given sentence</li>
+          </ul>
+        </section>
+
+        <section>
+          <h1>Numbers</h1>
+          <ul>
+            <li>Numbers can be written with or without decimals.</li>
+          </ul>
+          <pre><code>
+  var x = 3.14; // A number with decimals
+  var y = 3;    // A number without decimals
+          </code></pre>
+        </section>
+
+        <section>
+          <h4>Extra large or extra small numbers can be written with scientific (exponent) notation:</h4>
+<pre><code>
+  var x = 123e5;  // 12300000
+  var y = 123e-5; // 0.00123
+
+</code></pre>
+        </section>
+
+        <section>
+          <h4>Adding Numbers and Strings</h4>
+          <h5>WARNING !!</h5>
+          <ul>
+            <li>JavaScript uses the + operator for both addition and concatenation.</li>
+            <li>Numbers are added. Strings are concatenated.</li>
+          </ul>
+<pre><code>
+  var x = (0.2 * 10 + 0.1 * 10) / 10;       // x will be 0.3
+
+</code></pre>
+        </section>
+
+        <section>
+          <h4>Adding Numbers and Strings</h4>
+<pre><code>
+  var x = 10;
+  var y = 20;
+  var z = x + y;  // z will be 30 (a number)
+
+</code></pre>
+        </section>
+
+        <section>
+          <h4>Adding Numbers and Strings</h4>
+<pre><code>
+  var x = "10";
+  var y = "20";
+  var z = x + y;           // z will be 1020 (a string)
+
+</code></pre>
+        </section>
+
+        <section>
+          <h4>Common Mistake</h4>
+<pre><code>
+  var x = 10;
+  var y = 20;
+  var z = "The result is: " + x + y;  // ??
+
+</code></pre>
+        </section>
+
+        <section>
+          <h4>Common Mistake</h4>
+<pre><code>
+  var x = 10;
+  var y = 20;
+  var z = "30";
+  var result = x + y + z; // ?? 102030?
+
+</code></pre>
+        </section>
+
+        <section>
+          <h4>Important</h4>
+          <ul>
+            <li>The JavaScript interpreter works from left to right.</li>
+            <li>First 10 + 20 is added because x and y are both numbers.</li>
+            <li>Then 30 + "30" is concatenated because z is a string.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h4>NaN - Not a Number</h4>
+<pre><code>
+  var x = 100 / "Apple";  // x will be NaN (Not a Number)
+
+  var x = NaN;
+  var y = "5";
+  var z = x + y;
+
+  typeof NaN;            // returns "number"
+
+</code></pre>
+        </section>
+
+        <section>
+          <h4>Infinity</h4>
+<pre><code>
+  for (var i=0; i < Infinity; i++) {   // Execute until Infinity
+    i++;
+  }
+
+</code></pre>
+        </section>
+
+        <section>
+          <h1>Number Methods</h1>
+          <ul>
+            <li>Number(), toFixed()</li>
+          </ul>
+        </section>
+
+        <section>
+          <h4>toFixed()</h4>
+          <p>toFixed() returns a string, with the number written with a specified number of decimals</p>
+<pre><code>
+  var x = 9.656;
+  x.toFixed(0);           // returns 10
+  x.toFixed(2);           // returns 9.66
+  x.toFixed(4);           // returns 9.6560
+  x.toFixed(6);           // returns 9.656000
+
+</code></pre>
+        </section>
+
+        <section>
+          <h4>Number()</h4>
+          <p>Number() can be used to convert JavaScript variables to numbers:</p>
+<pre><code>
+  Number(true);          // returns 1
+  Number(false);         // returns 0
+  Number("10");          // returns 10
+  Number("  10");        // returns 10
+  Number("10  ");        // returns 10
+  Number(" 10  ");       // returns 10
+  Number("10.33");       // returns 10.33
+  Number("10,33");       // returns NaN
+  Number("10 33");       // returns NaN
+  Number("John");        // returns NaN
+
+</code></pre>
+        </section>
+
+        <section>
+          <h4>Remainder, modulus</h4>
+          <p>The remainder operator % gives the remainder of the division of two numbers</p>
+<pre><code>
+  17 % 2 = 1 (17 is Odd)
+  48 % 2 = 0 (48 is Even)
+
+</code></pre>
+        </section>
+
+        <section>
+          <h4>typeof</h4>
+          <p>We’ll be using the typeof operator to explore types below</p>
+<pre><code>
+  var a = 1 // number
+  console.log(typeof a) // ?
+  a = 'test' // string
+  console.log(typeof a) // ?
+  typeof true // 'boolean'
+  typeof undefined // 'undefined'
+
+</code></pre>
+        </section>
+
+        <section>
+          <h3>Let's Find Types</h3>
+<pre><code>
+  var a = 1 // number
+  typeof a // ?
+  a = 'test' // string
+  typeof a // ?
+  typeof Infinity // ?
+  typeof '30' // ?
+  typeof 1.5 // ?
+  typeof null // ???????
+
+</code></pre>
+        </section>
+
+        <section>
+          <h3>Let's Develop It</h3>
+          <ul>
+            <li>Create a function which returns number of even numbers from a given array of numbers</li>
+            <li>Create a function to find how many even numbers between given 2 numbers</li>
+            <li>Create a function to find the highest value in an array</li>
+            <li>Create a function to find the lowest value in an array</li>
+            <li>Create a function to calculate sum all numbers from a given array</li>
+            <li>Create a function to calculate power of a number power(2, 3)</li>
+            <li>Create a function to check if all values in an array are same types</li>
+            <li>Create a function to get the greatest common divisor (gcd) of two integers gcd(12, 8) // 4</li>
+          </ul>
+        </section>
+
+
+      <!-- Final slides-->
+        <section>
+          <h3>You did it!</h3>
+          <div>Resources</div>
+          <ul>
+            <li><a href="https://codeburst.io/javascript-essentials-types-data-structures-3ac039f9877b" target="_blank">Codeburst </a></li>
+            <li><a href="https://www.w3schools.com/js/js_datatypes.asp" target="_blank">W3schools </a></li>
+          </ul>
+        </section>
+
+    </div>
+  </div>
+
+    <script src="../assets/js/head.min.js"></script>
+    <script src="../assets/js/reveal.min.js"></script>
+
+    <script>
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: '../assets/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../assets/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: '../assets/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: '../assets/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: '../assets/plugin/zoom-js/zoom.js', async: true },
+          { src: '../assets/plugin/notes/notes.js', async: true },
+          { src: '../assets/plugin/accessibility-helper/js/accessibility-helper.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
+    </script>
+
+  </body>
+</html>

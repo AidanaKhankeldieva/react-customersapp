@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Seytech</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<style>
+.row {
+    margin: 0 !important;
+}
+    .jumbotron {
+        height: 60px;
+        padding: 15px;
+    }
+    .box {
+        padding: 10px;
+        margin: 10px 0;
+        border: solid 1px #f3ebff;
+    }
+    .text {
+        display: inline-block;
+    }
+    .float-right::after {
+        clear: both;
+    }
+    .badge {
+        margin: 0 5px;
+    }
+</style>
+</head>
+<body>
+    <main role="main">
+      <!-- Main jumbotron for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <div class="container">
+          <h4 class="display-5">Frontend Prep - Array Methods Practice Questions</h4>
+        </div>
+      </div>
+        <div> Solve problems using given methods. Tags refer to how many ways you need to solve and tag colors are complexity</div>
+        <span class="badge badge-primary">Too Easy</span>
+        <span class="badge badge-secondary">Easy</span>
+        <span class="badge badge-warning">Medium</span>
+        <span class="badge badge-danger">Hard</span>
+        <div class="box">
+            <div><strong>1</strong>
+                <span class=" float-right badge badge-pill badge-primary">some</span>
+                <span class=" float-right badge badge-pill badge-primary">loop</span>
+            </div>
+            <div class="text">
+                Create a function which returns true if <u>all</u> elements of a given array are bigger then 5
+            </div>
+        </div>
+        <div class="box">
+            <div><strong>2</strong>
+                <span class=" float-right badge badge-pill badge-primary">every</span>
+                <span class=" float-right badge badge-pill badge-primary">loop</span>
+            </div>
+            <div class="text">
+                Create a function which returns true if <u>any</u> element of a given array is less then 5
+            </div>
+        </div>
+        <div class="box">
+            <div><strong>3</strong>
+                <span class=" float-right badge badge-pill badge-primary">lastIndexOf</span>
+                <span class=" float-right badge badge-pill badge-primary">loop</span>
+            </div>
+            <div class="text">
+                Create a function which returns last index of "Apple" from ["Apple", "Orange", "Apple", "Mango"]
+            </div>
+        </div>
+        <div class="box">
+            <div><strong>4</strong>
+                <span class=" float-right badge badge-pill badge-primary">loop</span>
+            </div>
+            <div class="text">
+                Create a function which returns all indexes of "Apple" from ["Apple", "Orange", "Apple", "Mango"]
+            </div>
+        </div>
+        <div class="box">
+            <div><strong>5</strong>
+                <span class=" float-right badge badge-pill badge-primary">loop</span>
+                <span class=" float-right badge badge-pill badge-primary">join</span>
+            </div>
+            <div class="text">
+                Create a function which adds "+" for each element ["Banana", "Orange", "Apple"] => ["Banana+", "Orange+", "Apple+"]
+            </div>
+        </div>
+        <div class="box">
+            <div><strong>5</strong>
+                <span class=" float-right badge badge-pill badge-secondary">loop</span>
+            </div>
+            <div class="text">
+                Create a function which adds "and" after each one and converts to string. ["Banana", "Orange", "Apple"] => "Banana and Orange and Apple"
+            </div>
+        </div>
+        <div class="box">
+            <div><strong>6</strong>
+                <span class=" float-right badge badge-pill badge-danger">loop</span>
+                <span class=" float-right badge badge-pill badge-primary">indexOf</span>
+            </div>
+            <div class="text">
+                Create a function which finds index of "abc" in a given string, "bsdabdabcabd"
+            </div>
+        </div>
+        <div class="box">
+            <div><strong>7</strong>
+                <span class=" float-right badge badge-pill badge-primary">loop</span>
+                <span class=" float-right badge badge-pill badge-primary">map</span>
+            </div>
+            <div class="text">
+                Create a function which returns square of all elements from a given array [2, 3, 4, 5] => [4, 9, 16, 25]
+            </div>
+        </div>
+        <div class="box">
+            <div><strong>8</strong>
+                <span class=" float-right badge badge-pill badge-primary">loop</span>
+            </div>
+            <div class="text">
+                Create a function which finds how many 5 inside an array [1,2,4,5,8,5,1,5]
+            </div>
+        </div>
+        <div class="box">
+            <div><strong>9</strong>
+                <span class=" float-right badge badge-pill badge-primary">pop</span>
+                <span class=" float-right badge badge-pill badge-primary">push</span>
+            </div>
+            <div class="text">
+                Create a function which copies all elements of array using pop(), push()
+            </div>
+        </div>
+        <div class="box">
+            <div><strong>10</strong>
+                <span class=" float-right badge badge-pill badge-primary">loop</span>
+                <span class=" float-right badge badge-pill badge-primary">reduce</span>
+            </div>
+            <div class="text">
+                Create a function which finds sum of all elements from a given array
+            </div>
+        </div>
+        <div class="box">
+            <div><strong>11</strong>
+                <span class=" float-right badge badge-pill badge-primary">loop</span>
+                <span class=" float-right badge badge-pill badge-primary">forEach</span>
+                <span class=" float-right badge badge-pill badge-warning">reduce</span>
+            </div>
+            <div class="text">
+                Create a function which returns sum of all numbers from a given array. [1,{}, null,2] => 3
+            </div>
+        </div>
+        <div class="box">
+            <div><strong>12</strong>
+                <span class=" float-right badge badge-pill badge-secondary">loop</span>
+                <span class=" float-right badge badge-pill badge-secondary">forEach</span>
+                <span class=" float-right badge badge-pill badge-warning">reduce</span>
+            </div>
+            <div class="text">
+                Create a function which returns sum of all numbers or convertable to numbers from a given array. [1,{}, null,2, true, '1'] => 5
+            </div>
+        </div>
+        <div class="box">
+            <div><strong>13</strong>
+                <span class=" float-right badge badge-pill badge-primary">loop</span>
+                <span class=" float-right badge badge-pill badge-primary">reverse</span>
+            </div>
+            <div class="text">
+                Create a function which reverses a give string "hello me" => "em olleh"
+            </div>
+        </div>
+        <div class="box">
+            <div><strong>14</strong>
+                <span class="float-right badge badge-pill badge-warning">loop</span>
+                <span class="float-right badge badge-pill badge-warning">filter</span>
+            </div>
+            <div class="text">
+                Create a function to filter all chars which are not equal to "a" from an array. ['a','b','A','c'] => ['b','c']
+            </div>
+        </div>
+        <div class="box">
+            <div><strong>15</strong>
+                <span class="float-right badge badge-pill badge-warning">loop</span>
+            </div>
+            <div class="text">
+                Create a function to reverse all words in a given string "ym eman si taraM" => "my name is Marat"
+            </div>
+        </div>
+        <div class="box">
+            <div><strong>16</strong>
+                <span class="float-right badge badge-pill badge-primary">slice</span>
+                <span class="float-right badge badge-pill badge-primary">splice</span>
+            </div>
+            <div class="text">
+                Create a function to get only ["Orange", "Lemon"] from ["Banana", "Orange", "Lemon", "Apple", "Mango"]
+            </div>
+        </div>
+        <div class="box">
+            <div><strong>17</strong>
+                <span class="float-right badge badge-pill badge-primary">sort</span>
+            </div>
+            <div class="text">
+                Create a function to sort a given string "gtdebca";
+            </div>
+        </div>
+        <div class="box">
+            <div><strong>18</strong>
+                <span class="float-right badge badge-pill badge-secondary">sort</span>
+            </div>
+            <div class="text">
+                Create a function to sort numbers in a given arr [20, 18, 10, 5];
+            </div>
+        </div>
+        <div class="box">
+            <div><strong>19</strong>
+                <span class="float-right badge badge-pill badge-primary">splice</span>
+            </div>
+            <div class="text">
+                Create a function to Replace "Orange" to "Melon" from array ["Banana", "Orange", "Apple", "Mango"] to ["Banana", "Melon", "Apple", "Mango"]
+            </div>
+        </div>
+        <div class="box">
+            <div><strong>20</strong>
+                <span class="float-right badge badge-pill badge-primary">splice</span>
+            </div>
+            <div class="text">
+                Create a function to Replace all "Orange" to "Melon" from array ["Bana", "Orange", "Apple","Orange"] to ["Bana", "Melon", "Apple", "Orange"]
+            </div>
+        </div>
+        <div class="box">
+            <div><strong>21</strong>
+                <span class="float-right badge badge-pill badge-secondary">splice</span>
+            </div>
+            <div class="text">
+                Create a function to Add "Melon" after ""Orange" to this array ["Banana", "Orange", "Apple", "Mango"]
+            </div>
+        </div>
+        <div class="box">
+            <div><strong>22</strong>
+                <span class="float-right badge badge-pill badge-secondary">loop</span>
+                <span class="float-right badge badge-pill badge-secondary">indexOf</span>
+            </div>
+            <div class="text">
+                Create a polyfill function for "includes" nethod of Array
+            </div>
+        </div>
+
+
+    </main>
+</body>
+</html>

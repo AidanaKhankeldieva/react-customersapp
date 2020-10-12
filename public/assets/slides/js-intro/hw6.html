@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Intro to JavaScript Homework</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+
+  <link rel="stylesheet" href="homework.css">
+
+  <script src="../assets/js/jquery-1.8.2.min.js"></script>
+  <script type="text/javascript">
+    // Powers show/hide buttons.
+    $( document ).ready(function() {
+      $("div.codebox").hide();
+    });
+    function showSolution(num) {
+      $("div#example" + num + "Code").toggle();
+    }
+  </script>
+  <style type="text/css">
+    button {
+      margin-bottom: 1.5em;
+    }
+		header h1{
+			margin-left: 25px;
+		}
+  </style>
+
+  <!--[if lt IE 9]> <script src="dist/js/html5shiv.js"></script> <![endif]-->
+</head>
+<body>
+
+  <div class="container main">
+
+    <article id="main-content" tabindex="-1" class="span9">
+
+      <section>
+        <h2 id="class4">Class 6 - Practice Homeworks</h2>
+        <h4>Do these in one repl and send the link to us!</h4>
+        <!--<button onclick="showSolution(14)">Show/Hide Solution</button>-->
+        <div>
+          <p style="color:red">1. Display the position of the first occurrence of "World" in the variable txt</p>
+          <p>
+            <pre>
+              <code>var txt = "Hello World"; 
+                // your answer goes here </code>
+            </pre>
+          </p>
+          </div>
+
+          <div>
+            <p style="color:red">2. Use the splice() method to remove "Orange" and "Apple" from fruits.</p>
+            <p>
+              <pre>
+                <code> var fruits = ["Banana", "Orange", "Apple", "Kiwi"];
+                // your answer goes here </code>
+              </pre>
+            </p>
+            </div>
+
+            <div>
+              <p style="color:red">3. Use the concat() method to concatenate girls and boys.</p>
+              <p>
+                <pre>
+                  <code> var girls = ["Cecilie", "Lone"];
+                    var boys = ["Emil", "Tobias", "Linus"];
+                  // your answer goes here </code>
+                </pre>
+              </p>
+              </div>
+
+              <div>
+                <p style="color:red">4. Create an object called "User". Give any 4 properties(key, values) to it.<br>
+                  Then use methods or loop to get the keys and values of User object.
+                </p>
+                <p>
+                  <pre>
+                    <code>// your answer goes here</code>
+                  </pre>
+                </p>
+                </div>
+      </section>
+    </article>
+  </div>
+</body>
+</html>

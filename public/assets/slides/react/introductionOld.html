@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+  <title>State, Events, and Forms</title>
+  <meta charset="utf-8">
+  <style>
+      .remark-slide-scaler {
+          width: 100% !important;
+          height: 100% !important;
+          transform: scale(1) !important;
+          left: 0 !important;
+          top: 0 !important;
+      }
+    @import url(https://fonts.googleapis.com/css?family=Raleway);
+    @import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic);
+    @import url(https://fonts.googleapis.com/css?family=Inconsolata:400,700,400italic);
+
+    body {
+      font-family: 'Lato';
+
+    }
+
+    h1, h2, h3 {
+      font-family: 'Raleway';
+      font-weight: normal;
+    }
+
+    .remark-code, .remark-inline-code {
+      font-family: 'Inconsolata';
+      background-color: #dddddd;
+    }
+  </style>
+</head>
+<body>
+<textarea id="source">
+
+class: center, middle
+
+# Introduction
+
+---
+# What is React.js?
+- Developed by Facebook
+- React is a view layer library, not a framework like Backbone, Angular etc.
+- You can't use React to build a fully-functional web app
+
+---
+class: center, middle
+# Why was React developed?
+---
+#  Why was React developed?
+- Complexity of two-way data binding
+- Bad UX from using "cascading updates" of DOM tree
+- A lot of data on a page changing over time
+- Complexity of Facebook's UI architecture
+- Shift from MVC mentality
+
+
+---
+class: center, middle
+# Why React?
+---
+
+# Declarative
+- Predictable code
+- Easy to understand what a component will render
+---
+# No complex two-way data flow
+- Uses simple one-way reactive data flow
+- Easier to understand than two-way binding
+- Uses less code
+
+---
+# React is fast!
+
+- Real DOM is slow
+- JavaScript is fast
+- Using virtual DOM objects enables fast batch updates to real DOM, with great productivity gains over frequent cascading updates of DOM tree
+
+---
+
+# Server-side rendering
+
+- React.renderToString() returns pure HTML
+
+---
+# React dev tools
+
+- React Chrome extension makes debugging  so much easier
+---
+
+## Trying Out React
+
+Hello World example
+- Locally Coding [**Create React App**](https://github.com/facebookincubator/create-react-app). (recommended)
+- Online code on [**CodePen**](http://codepen.io/gaearon/pen/rrpgNB?editors=0010).
+- Own text editor [**Download HTML**](https://raw.githubusercontent.com/reactjs/reactjs.org/master/static/html/single-file-example.html)
+
+---
+## JSX
+- XML-like syntax for generating component's HTML
+- Easier to read and understand large DOM trees
+- Translates to plain JavaScript
+---
+
+
+Let's try to create example above in Javascript:
+
+```javascript
+<div id="root">
+  <h1>Hello World!</h1>
+</div>
+```
+
+---
+# HTML in JS:
+```javascript
+var el = document.createElement('h1');
+var content = document.createTextNode('Hello World!');
+el.append(content);
+var root = document.getElementById('root');
+root.appendChild(el)
+```
+
+---
+# React:
+```javascript
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+const App = () => {
+  return (<h1>Hello World!</h1>)
+}
+
+const element = document.getElementById('root');
+ReactDOM.render(<App />, element);
+```
+
+---
+#### JSX Represents Objects
+```javascript
+const element = (
+  <h1 className="greeting">
+    Hello, world!
+  </h1>
+);
+```
+
+Babel compiles JSX down to React.createElement() calls.
+```javascript
+const element = React.createElement(
+  'h1',
+  {className: 'greeting'},
+  'Hello, world!'
+);
+```
+
+React.createElement() creates an object like this:
+```javascript
+// Note: this structure is simplified
+const element = {
+  type: 'h1',
+  props: {
+    className: 'greeting',
+    children: 'Hello, world'
+  }
+};
+```
+These objects are called “React elements”.
+---
+
+# Props
+- Passed down to component from parent component and represents data for the component
+- Accessed via this.props
+```javascript
+render: function() {
+      var someProp = 'bar';
+
+      return (
+        <div>
+          <AnotherComponent foo={someProp} model={this.props.model} />
+        </div>
+      );
+}
+```
+
+---
+
+# defaultProps
+defaultProps can be defined as a property on the component class itself, to set the default props for the class
+```javascript
+User.defaultProps = {
+      name: 'Mike',
+}
+```
+
+if we render User component without any name by default will be Mike.
+```javascript
+<User />
+```
+
+---
+
+# Conditional Rendering
+Use JavaScript operators like if or the conditional operator to create elements representing the current state, and let React update the UI to match them
+
+```javascript
+const UserEnter = (props)=> {
+  return <h1>Welcome Back {props.name}</h1>
+};
+
+const GuestEnter = (props)=> {
+  return <h1>Please Sign in.</h1>
+};
+```
+---
+# Conditional Rendering
+```javascript
+if (this.props.isLoggedin) {
+      return (
+        <UserEnter name={this.props.name} />
+      )
+    } else {
+      return <GuestEnter/>
+    }
+```
+
+---
+# Code Improvement
+
+# References
+
+
+    </textarea>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js">
+</script>
+<script>
+  var slideshow = remark.create({
+    highlightLines: true,
+  });
+</script>
+</body>
+</html>

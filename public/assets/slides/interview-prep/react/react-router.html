@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Seytech</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../style.css">
+    <link href="../../assets/css/prism/prism.css" rel="stylesheet" />
+    <script src="../../assets/css/prism/prism.js"></script>
+</head>
+
+<body>
+    <main role="main">
+        <!-- Main jumbotron for a primary marketing message or call to action -->
+        <div class="jumbotron">
+            <div class="container">
+                <h4 class="display-5">React Interview questions</h4>
+            </div>
+        </div>
+        <div>
+            <span class="badge badge-primary">React</span>
+            <span class="badge badge-primary">State</span>
+            <span class="badge badge-primary">Props</span>
+            <span class="badge badge-primary">react router</span>
+        </div>
+        <div class="box">
+            <div class="text">
+                <h5> 1) What is React Router? <span class="float-right badge badge-pill badge-primary">react
+                        router</span></h5>
+                <pre class="pre"><code class="language-markup">
+                React Router is a powerful routing library built on top of
+                React that helps you add new screens and flows to your application incredibly quickly, 
+                all while keeping the URL in sync with what's being displayed on the page.
+            </code></pre>
+            </div>
+        </div>
+        <div class="box">
+            <div class="text">
+                <h5> 2) How React Router is different from history library? <span
+                        class="float-right badge badge-pill badge-primary">react router</span></h5>
+                <pre class="pre">
+                <code class="language-markup">
+                    React Router is a wrapper around the history library which handles interaction with the browser's window.history with its browser and hash histories. 
+                    It also provides memory history which is useful for environments that don't have global history, 
+                    such as mobile app development (React Native) and unit testing with Node.
+                  
+                </code>
+            </pre>
+            </div>
+        </div>
+        <div class="box">
+            <div class="text">
+                <h5>3) What are the &lt;Router> components of React Router v4? <span
+                        class="float-right badge badge-pill badge-primary">react router</span></h5>
+                <pre class="pre"><code class="language-javascript">
+
+                React Router v4 provides below 3 &lt;Router> components:
+
+                    &lt;BrowserRouter>
+                    &lt;HashRouter>
+                    &lt;MemoryRouter>
+                    
+                The above components will create browser, hash, and memory history instances. 
+                React Router v4 makes the properties and methods of the history instance associated with your router available through the context in the router object.
+            </code></pre>
+            </div>
+        </div>
+        <div class="box">
+            <div class="text">
+                <h5>4) What is the purpose of push() and replace() methods of history? <span
+                        class="float-right badge badge-pill badge-primary">react router</span></h5>
+                <pre class="pre"><code class="language-javascript">
+                A history instance has two methods for navigation purpose.
+
+                1. push()
+                2. replace()
+
+                If you think of the history as an array of visited locations, push() will add a new location 
+                to the array and replace() will replace the current location in the array with the new one.
+
+            </code></pre>
+            </div>
+        </div>
+        <div class="box">
+            <div class="text">
+                <h5>5) How do you programmatically navigate using React Router v4?<span
+                        class="float-right badge badge-pill badge-primary">react router</span></h5>
+                <pre class="pre"><code class="language-javascript">
+            There are three different ways to achieve programmatic routing/navigation within components.
+
+                1. Using the withRouter() higher-order function:
+                
+                The withRouter() higher-order function will inject the history object as a prop of the component. This object provides push() and replace() methods to avoid the usage of context.
+                
+                import { withRouter } from 'react-router-dom' // this also works with 'react-router-native'
+                
+                const Button = withRouter(({ history }) => (
+                &lt;button
+                    type='button'
+                    onClick={() => { history.push('/new-location') }}
+                  >
+                    {'Click Me!'}
+                &lt;/button>
+                ))
+
+                2. Using &lt;Route> component and render props pattern:
+                
+                The &lt;Route> component passes the same props as withRouter(), so you will be able to access the history methods through the history prop.
+                
+                import { Route } from 'react-router-dom'
+                
+                const Button = () => (
+                    &lt;Route render={({ history }) => (
+                    &lt;button
+                      type='button'
+                      onClick={() => { history.push('/new-location') }}
+                    >
+                      {'Click Me!'}
+                    &lt;/button>
+                  )} />
+                )
+
+                3. Using context:
+                
+                This option is not recommended and treated as unstable API.
+                
+                const Button = (props, context) => (
+                    &lt;button
+                        type='button'
+                        onClick={() => {
+                        context.history.push('/new-location')
+                        }}
+                    >
+                        {'Click Me!'}
+                    &lt;/button>
+                )
+                
+                Button.contextTypes = {
+                  history: React.PropTypes.shape({
+                    push: React.PropTypes.func.isRequired
+                  })
+                }
+            </code></pre>
+            </div>
+        </div>
+        <div class="box">
+            <div class="text">
+                <h5>6) How to get query parameters in React Router v4? <span
+                        class="float-right badge badge-pill badge-primary">react router</span></h5>
+                <pre class="pre"><code class="language-javascript">
+                The ability to parse query strings was taken out of React Router v4 because there have been user requests over the years to support different implementation. So the decision has been given to users to choose the implementation they like. The recommended approach is to use query strings library.
+
+                    const queryString = require('query-string');
+                    const parsed = queryString.parse(props.location.search);
+
+                You can also use URLSearchParams if you want something native:
+                
+                    const params = new URLSearchParams(props.location.search)
+                    const foo = params.get('name')
+
+                You should use a polyfill for IE11.
+
+            </code></pre>
+            </div>
+        </div>
+        <div class="box">
+            <div class="text">
+                <h5>7) What are Pure Components?<span
+                        class="float-right badge badge-pill badge-primary">react router</span></h5>
+                <pre class="pre"><code class="language-markup">
+                React.PureComponent is exactly the same as React.Component except that it handles the shouldComponentUpdate() method for you. 
+                When props or state changes, PureComponent will do a shallow comparison on both props and state. 
+                Component on the other hand won't compare current props and state to next out of the box. 
+                Thus, the component will re-render by default whenever shouldComponentUpdate is called.
+            </code></pre>
+            </div>
+        </div>
+        <div class="box">
+            <div class="text">
+                <h5>8) Why you get "Router may have only one child element" warning? <span
+                        class="float-right badge badge-pill badge-primary">react router</span></h5>
+                <pre class="pre"><code class="language-javascript">
+
+                You have to wrap your Route's in a &lt;Switch> block because &lt;Switch> is unique in that it renders a route exclusively.
+
+                    At first you need to add Switch to your imports:
+                    
+                    import { Switch, Router, Route } from 'react-router'
+                    Then define the routes within &lt;Switch> block:
+                    
+                    &lt;Router>
+                        &lt;Switch>
+                            &lt;Route {/* ... */} />
+                            &lt;Route {/* ... */} />
+                        &lt;/Switch>
+                    &lt;/Router>
+
+            </code></pre>
+            </div>
+        </div>
+        <div class="box">
+            <div class="text">
+                <h5>9) How to pass params to history.push method in React Router v4? <span
+                        class="float-right badge badge-pill badge-primary">react router</span></h5>
+                <pre class="pre"><code class="language-javascript">
+                While navigating you can pass props to the history object:
+
+                    this.props.history.push({
+                    pathname: '/template',
+                    search: '?name=sudheer',
+                    state: { detail: response.data }
+                    })
+
+                The search property is used to pass query params in push() method.
+
+            </code></pre>
+            </div>
+        </div>
+        <div class="box">
+            <div class="text">
+                <h5>10) How to implement default or NotFound page? <span
+                        class="float-right badge badge-pill badge-primary">react router</span></h5>
+                <pre class="pre"><code class="language-markup">
+                A &lt;Switch> renders the first child &lt;Route> that matches. A &lt;Route> with no path always matches. So you just need to simply drop path attribute as below
+
+                    &lt;Switch>
+                        &lt;Route exact path="/" component={Home}/>
+                        &lt;Route path="/user" component={User}/>
+                        &lt;Route component={NotFound} />
+                    &lt;/Switch>
+
+            </code></pre>
+            </div>
+        </div>
+        <div class="box">
+            <div class="text">
+                <h5>11) How to get history on React Router v4? <span
+                        class="float-right badge badge-pill badge-primary">react router</span></h5>
+                <pre class="pre"><code class="language-javascript">
+            Below are the list of steps to get history object on React Router v4,
+
+                1. Create a module that exports a history object and import this module across the project.
+                
+                    For example, create history.js file:
+                    
+                    import { createBrowserHistory } from 'history'
+                    
+                    export default createBrowserHistory({
+                    /* pass a configuration object here if needed */
+                    })
+
+                2. You should use the &lt;Router> component instead of built-in routers. Imported the above history.js inside index.js file:
+                
+                    import { Router } from 'react-router-dom'
+                    import history from './history'
+                    import App from './App'
+                    
+                    ReactDOM.render((
+                    &lt;Router history={history}>
+                        &lt;App />
+                    &lt;/Router>
+                    ), holder)
+
+                3. You can also use push method of history object similar to built-in history object:
+                    
+                    // some-other-file.js
+                    import history from './history'
+                    
+                    history.push('/go-here')
+
+            </code></pre>
+            </div>
+        </div>
+        <div class="box">
+            <div class="text">
+                <h5>12) How to perform automatic redirect after login? <span
+                        class="float-right badge badge-pill badge-primary">react router</span></h5>
+                <pre class="pre"><code class="language-javascript">
+
+                The react-router package provides &lt;Redirect> component in React Router. Rendering a &lt;Redirect> will navigate to a new location. Like server-side redirects, the new location will override the current location in the history stack.
+
+                    import React, { Component } from 'react'
+                    import { Redirect } from 'react-router'
+                    
+                    export default class LoginComponent extends Component {
+                      render() {
+                        if (this.state.isLoggedIn === true) {
+                          return &lt;Redirect to="/your/redirect/page" />
+                        } else {
+                          return &lt;div>{'Login Please'}&lt;/div>
+                        }
+                      }
+                    }
+            </code></pre>
+            </div>
+        </div>
+
+        <br />
+        <br />
+
+        <script>
+            // https://syndicode.com/2019/01/09/33-concepts-every-js-developer-should-know/
+            //https://scotch.io/courses/10-need-to-know-javascript-concepts/the-this-keyword
+            //https://javascript.info/
+
+            function toggle(e) {
+                if (e.currentTarget.querySelector('.pre').style.display === 'none') {
+                    e.currentTarget.querySelector('.pre').style.display = 'block'
+                } else {
+                    e.currentTarget.querySelector('.pre').style.display = 'none'
+                }
+            }
+            const boxes = document.getElementsByClassName('box');
+            for (let i = 0; i < boxes.length; i++) {
+                boxes[i].addEventListener('click', toggle);
+                boxes[i].querySelector('.pre').style.display = 'none';
+                boxes[i].querySelector('.pre').style.display = 'none'
+            }
+        </script>
+    </main>
+</body>
+
+</html>

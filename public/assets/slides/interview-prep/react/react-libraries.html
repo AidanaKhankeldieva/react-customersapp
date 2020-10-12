@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Seytech</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../style.css">
+    <link href="../../assets/css/prism/prism.css" rel="stylesheet" />
+    <script src="../../assets/css/prism/prism.js"></script>
+</head>
+
+<body>
+    <main role="main">
+        <!-- Main jumbotron for a primary marketing message or call to action -->
+        <div class="jumbotron">
+            <div class="container">
+                <h4 class="display-5">React Interview questions</h4>
+            </div>
+        </div>
+        <div>
+            <span class="badge badge-primary">react</span>
+            <span class="badge badge-primary">flow</span>
+        </div>
+        <div class="box">
+            <div class="text">
+                <h5> 1) What is reselect and how it works? <span class="float-right badge badge-pill badge-primary">redux</span></h5>
+                <pre class="pre"><code class="language-javascript">
+                    Reselect is a selector library (for Redux) which uses memoization concept. 
+                    It was originally written to compute derived data from Redux-like applications state, 
+                    but it can't be tied to any architecture or library.
+
+                    Reselect keeps a copy of the last inputs/outputs of the last call, 
+                    and recomputes the result only if one of the inputs changes. 
+                    If the the same inputs are provided twice in a row, 
+                    Reselect returns the cached output. 
+                    It's memoization and cache are fully customizable.
+                </code></pre>
+            </div>
+        </div>
+        <div class="box">
+            <div class="text">
+                <h5> 2) Open to see a lot of other questions <span class="float-right badge badge-pill badge-primary">redux</span></h5>
+                <pre class="pre"><code class="language-javascript">
+                        What is Flow?
+                        What is the difference between Flow and PropTypes?
+                        How to use font-awesome icons in React?
+                        What is React Dev Tools?
+                        Why is DevTools not loading in Chrome for local files?
+                        How to use Polymer in React?
+                        What are the advantages of React over Vue.js?
+                        What is the difference between React and Angular?
+                        Why React tab is not showing up in DevTools?
+                        What are styled components?
+                        Give an example of Styled Components?
+                        What is Relay?
+                        How to use TypeScript in create-react-app application?
+                </code></pre>
+            </div>
+        </div>
+
+        <br />
+        <br />
+
+        <script>
+            // https://syndicode.com/2019/01/09/33-concepts-every-js-developer-should-know/
+            //https://scotch.io/courses/10-need-to-know-javascript-concepts/the-this-keyword
+            //https://javascript.info/
+
+            function toggle(e) {
+                if (e.currentTarget.querySelector('.pre').style.display === 'none') {
+                    e.currentTarget.querySelector('.pre').style.display = 'block'
+                } else {
+                    e.currentTarget.querySelector('.pre').style.display = 'none'
+                }
+            }
+            const boxes = document.getElementsByClassName('box');
+            for (let i = 0; i < boxes.length; i++) {
+                boxes[i].addEventListener('click', toggle);
+                boxes[i].querySelector('.pre').style.display = 'none';
+                boxes[i].querySelector('.pre').style.display = 'none'
+            }
+        </script>
+    </main>
+</body>
+
+</html>

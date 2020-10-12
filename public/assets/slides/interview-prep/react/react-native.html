@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Seytech</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../style.css">
+    <link href="../../assets/css/prism/prism.css" rel="stylesheet" />
+    <script src="../../assets/css/prism/prism.js"></script>
+</head>
+
+<body>
+    <main role="main">
+        <!-- Main jumbotron for a primary marketing message or call to action -->
+        <div class="jumbotron">
+            <div class="container">
+                <h4 class="display-5">React Interview questions</h4>
+            </div>
+        </div>
+        <div>
+            <span class="badge badge-primary">react</span>
+            <span class="badge badge-primary">native</span>
+        </div>
+        <div class="box">
+            <div class="text">
+                <h5> 1) What is the difference between React Native and React? <span class="float-right badge badge-pill badge-primary">native</span></h5>
+                <pre class="pre"><code class="language-javascript">
+                    React 
+                        is a JavaScript library, supporting both front end web and being run on the server, 
+                        for building user interfaces and web applications.
+
+                    React Native 
+                        is a mobile framework that compiles to native app components, 
+                        allowing you to build native mobile applications (iOS, Android, and Windows) in JavaScript 
+                        that allows you to use React to build your components, and implements React under the hood.
+                </code></pre>
+            </div>
+        </div>
+        <div class="box">
+            <div class="text">
+                <h5> 2) How to test React Native apps? <span class="float-right badge badge-pill badge-primary">native</span></h5>
+                <pre class="pre"><code class="language-javascript">
+                    React Native can be tested only in mobile simulators like iOS and Android. 
+                    You can run the app in your mobile using expo app (https://expo.io) 
+                    Where it syncs using QR code, your mobile and computer should be in same wireless network.
+                </code></pre>
+            </div>
+        </div>
+        <div class="box">
+            <div class="text">
+                <h5> 3) How to do logging in React Native? <span class="float-right badge badge-pill badge-primary">native</span></h5>
+                <pre class="pre"><code class="language-javascript">
+                    You can use console.log, console.warn, etc. 
+                    As of React Native v0.29 you can simply run the following to see logs in the console:
+
+                    $ react-native log-ios
+                    $ react-native log-android
+                </code></pre>
+            </div>
+        </div>
+        <div class="box">
+            <div class="text">
+                <h5> 4) How to debug your React Native? <span class="float-right badge badge-pill badge-primary">native</span></h5>
+                <pre class="pre"><code class="language-javascript">
+                    Follow the below steps to debug React Native app:
+
+                        - Run your application in the iOS simulator.
+                        - Press Command + D and a webpage should open up at http://localhost:8081/debugger-ui.
+                        - Enable Pause On Caught Exceptions for a better debugging experience.
+                        - Press Command + Option + I to open the Chrome Developer tools, or open it via View -> Developer -> Developer Tools.
+                        - You should now be able to debug as you normally would.
+
+                </code></pre>
+            </div>
+        </div>
+
+        <br />
+        <br />
+
+        <script>
+            // https://syndicode.com/2019/01/09/33-concepts-every-js-developer-should-know/
+            //https://scotch.io/courses/10-need-to-know-javascript-concepts/the-this-keyword
+            //https://javascript.info/
+
+            function toggle(e) {
+                if (e.currentTarget.querySelector('.pre').style.display === 'none') {
+                    e.currentTarget.querySelector('.pre').style.display = 'block'
+                } else {
+                    e.currentTarget.querySelector('.pre').style.display = 'none'
+                }
+            }
+            const boxes = document.getElementsByClassName('box');
+            for (let i = 0; i < boxes.length; i++) {
+                boxes[i].addEventListener('click', toggle);
+                boxes[i].querySelector('.pre').style.display = 'none';
+                boxes[i].querySelector('.pre').style.display = 'none'
+            }
+        </script>
+    </main>
+</body>
+
+</html>

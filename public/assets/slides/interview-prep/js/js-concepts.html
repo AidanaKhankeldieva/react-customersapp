@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Seytech</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../style.css">
+    <link href="../../assets/css/prism/prism.css" rel="stylesheet" />
+<script src="../../assets/css/prism/prism.js"></script>
+</head>
+<body>
+<main role="main">
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+        <div class="container">
+            <h4 class="display-5">Interview - HTML CSS questions</h4>
+        </div>
+    </div>
+    
+    <div class="box">
+        <div class="text">
+            <h5>Data Types</h5>
+            <div class="pre">
+                <p>There are 7 basic data types in JavaScript.</p>
+                <ul>
+                    <li><strong>number</strong> for numbers of any kind: integer or floating-point.</li>
+                    <li><strong>string</strong> for strings. A string may have one or more characters, there’s no separate single-character type.</li>
+                    <li><strong>boolean</strong> for true/false.</li>
+                    <li><strong>null</strong> for unknown values – a standalone type that has a single value null.</li>
+                    <li><strong>undefined</strong> for unassigned values – a standalone type that has a single value undefined.</li>
+                    <li><strong>object</strong> for more complex data structures.</li>
+                    <li><strong>symbol</strong> for unique identifiers.</li>
+                </ul>
+                                <p>The <strong>typeof</strong> operator allows us to see which type is stored in a variable.</p>
+                <ul>
+                    <li>Two forms: <strong>typeof</strong> x or <strong>typeof(x)</strong>.</li>
+                    <li>The typeof operator allows us to see which type is stored in a variable.</li>
+                    <li>Returns a string with the name of the type, like "<strong>string</strong>".</li>
+                    <li>For <strong>null</strong> returns <strong>"object"</strong> – this is an error in the language, it’s not actually an object.</li>
+                    <li><strong>Object</strong>, <strong>Array</strong>, <strong>Function</strong> are all types of objects.</li>
+                    <li>Null vs Undefined</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="box">
+        <div class="text">
+            <h5>“use strict”</h5>
+            <div class="pre">
+                <p>For a long time, JavaScript evolved without compatibility issues. New features were added to the language while old functionality didn’t change.</p>
+                <p>That had the benefit of never breaking existing code. But the downside was that any mistake or an imperfect decision made by JavaScript’s creators got stuck in the language forever.</p>
+                <p>This was the case until 2009 when ECMAScript 5 (ES5) appeared. It added new features to the language and modified some of the existing ones. To keep the old code working, most such modifications are off by default. You need to explicitly enable them with a special directive: "use strict"</p>
+            </div>
+        </div>
+    </div>
+    <div class="box">
+        <div class="text">
+            <h5>let vs const</h5>
+            <div class="pre"> </div>
+        </div>
+    </div>
+    <div class="box">
+        <div class="text">
+            <h5>Type Conversions</h5>
+            <div class="pre">
+                <a href="https://javascript.info/type-conversions">Info</a>
+            </div>
+        </div>
+    </div>
+    <div class="box">
+        <div class="text">
+            <h5>Async</h5>
+            <div class="pre">
+                callback, promise, async/await
+            </div>
+        </div>
+    </div>
+    <div class="box">
+        <div class="text">
+            <h5>Comparisons, Logical operator</h5>
+        </div>
+        <div class="pre">
+            == vs ===
+            || (OR), && (AND), ! (NOT).
+        </div>
+    </div>
+    
+    
+    <div class="box">
+        <div class="text">
+            <h5>Functions</h5>
+        </div>
+        <div class="pre">
+            <ul>
+                <li>Function Declaration</li>
+                <li>Local variables</li>
+                <li>Outer variables</li>
+                <li>Parameters</li>
+                <li>Default values</li>
+                <li>Returning a value</li>
+                <li>Function Expression</li>
+                <li>Arrow function</li>
+                <li>Callback functions</li>
+            </ul>
+        </div>
+    </div>
+    <div class="box">
+        <div class="text">
+            <h5>Scope</h5>
+        </div>
+        <div class="pre">
+            <p>Global scope, Local scope</p>
+            <pre>
+var x = 5;    // declare x globally
+
+function foo() {
+  var x = 4;      // create x locally in the function
+  console.log(x); // logs 4
+}
+
+foo();          // call our function
+
+console.log(x); // logs 5</pre>
+        </div>
+    </div>
+    <div class="box">
+        <div class="text">
+            <h5>IIFE</h5>
+        </div>
+        <div class="pre">
+            <p>An IIFE (Immediately Invoked Function Expression) is a JavaScript function that runs as soon as it is defined.</p>
+            <pre>
+(function () {
+    // statements
+})();</pre>
+        </div>
+    </div>
+
+
+    <div class="box">
+        <div class="text">
+            <h5>Hoisting</h5>
+        </div>
+        <div class="pre">
+            <p>In JavaScript, hoisting is a term used to denote the movement of variable and function declarations to the top of their scope during execution of the scope.</p>
+            <pre>
+console.log(x); // undefined
+var x = 40;</pre>
+        </div>
+    </div>
+
+
+    <div class="box">
+        <div class="text">
+            <h5>Higher-order Functions</h5>
+        </div>
+        <div class="pre">
+            <p>Both tallyCounter and setTimeout are what we call higher-order functions in JavaScript. These are functions that either return another function, or accept one or more function(s) as input parameters.</p>
+            <p>They are called higher-order because they are more concerned with higher-level concepts than lower-level details. As we mentioned before, callbacks are a great example of that:</p>
+            <pre>
+function helloToptal() {
+  console.log('Hello Totpal');
+}
+
+setTimeout(helloToptal, 1000);</pre>
+        </div>
+    </div>
+
+
+
+    <div class="box">
+        <div class="text">
+            <h5>Closure</h5>
+        </div>
+        <div class="pre">
+            <p>When we create a function inside another function in JavaScript, the inner function has access to the scope of the outer function as well as its own.</p>
+            <p>In the code example below, the count function is able to access total, which is defined in the outer scope within tallyCounter.</p>
+            <pre>
+function tallyCounter() {
+  let total = 0;
+
+  function count() {
+    total++;
+    return total;
+  }
+}
+console.log(count()); // Error: count is not defined</pre>
+        </div>
+    </div>
+
+
+    
+    <div class="box">
+        <div class="text">
+            <h5>Objects</h5>
+        </div>
+        <div class="pre">
+            https://scotch.io/courses/10-need-to-know-javascript-concepts/data-structures-objects-and-arrays
+        </div>
+    </div>
+    <div class="box">
+        <div class="text">
+            <h5>OOP</h5>
+        </div>
+        <div class="pre">
+            Prototypal Inheritance...
+        </div>
+    </div>
+
+
+    <div class="box">
+        <div class="text">
+            <h5>This</h5>
+        </div>
+        <div class="pre">
+            https://scotch.io/courses/10-need-to-know-javascript-concepts/the-this-keyword
+        </div>
+    </div>
+
+    <div class="box">
+        <div class="text">
+            <h5>Binding: Call, Apply</h5>
+        </div>
+        <div class="pre">
+        </div>
+    </div>
+    <div class="box">
+        <div class="text">
+            <h5>Prototype</h5>
+        </div>
+        <div class="pre">
+        </div>
+    </div>
+    <div class="box">
+        <div class="text">
+            <h5>Event Loop</h5>
+        </div>
+        <div class="pre">
+        </div>
+    </div>
+
+
+    <div class="box">
+        <div class="text">
+            <h5>setTimeout vs Settinterval</h5>
+        </div>
+        <div class="pre">
+            https://scotch.io/courses/10-need-to-know-javascript-concepts/the-this-keyword
+        </div>
+    </div>
+
+    <div class="box">
+        <div class="text">
+            <h5>Ternary operator</h5>
+        </div>
+        <div class="pre"></div>
+    </div>
+
+    <div class="box">
+        <div class="text">
+            <h5>Loops: while and for</h5>
+        </div>
+        <pre class="pre">
+while (condition) {
+    // code
+    // so-called "loop body"
+}
+
+for (begin; condition; step) {
+    // ... loop body ...
+}</pre>
+    </div>
+    <div class="box">
+        <div class="text">
+            <h5>Switch</h5>
+        </div>
+        <pre class="pre">
+switch(x) {
+  case 'value1':  // if (x === 'value1')
+    ...
+    [break]
+
+  case 'value2':  // if (x === 'value2')
+    ...
+    [break]
+
+  default:
+    ...
+    [break]
+}</pre>
+    </div>
+    <div class="box">
+        <div class="text">
+            <h5>Template Strings</h5>
+        </div>
+        <div class="pre">
+            ES6 adds a new feature called “template strings.” At first glance, they may look similar to string interpolation in other languages such as Ruby and PHP. Yes, they can be used to implement the same behavior:
+            <pre>
+const name = 'David'
+const myStr = `Hello, ${name}!`
+console.log(myStr)</pre>
+        </div>
+    </div>
+
+
+    <div class="box">
+        <div class="text">
+            <h5>The Rest and Spread Operators</h5>
+        </div>
+        <div class="pre">
+            <pre>
+ES5:
+
+var list = [0, 1, 2, 3, 4, 5, 6]
+var first = list[0]
+var rest = list.slice(1)
+console.log(first, rest)
+
+ES6:
+
+const [ first, ...rest ] = [0, 1, 2, 3, 4, 5, 6]
+console.log(first, rest)
+            </pre>
+        </div>
+    </div>
+    <div class="box">
+        <div class="text">
+            <h5>Mutable vs Immutable</h5>
+        </div>
+        <div class="pre">
+           
+        </div>
+    </div>
+    <div class="box">
+        <div class="text">
+            <h5>Pure vs impure functions</h5>
+        </div>
+        <div class="pre">
+           
+        </div>
+    </div>
+<script>
+// https://syndicode.com/2019/01/09/33-concepts-every-js-developer-should-know/
+//https://scotch.io/courses/10-need-to-know-javascript-concepts/the-this-keyword
+//https://javascript.info/
+
+    function toggle(e){
+        if (e.currentTarget.querySelector('.pre').style.display === 'none'){
+            e.currentTarget.querySelector('.pre').style.display = 'block'
+        } else {
+            e.currentTarget.querySelector('.pre').style.display = 'none'
+        }
+    }
+    const boxes = document.getElementsByClassName('box');
+    for (let i=0;i<boxes.length;i++){
+        boxes[i].addEventListener('click', toggle);
+        boxes[i].querySelector('.pre').style.display = 'none';
+        boxes[i].querySelector('.pre').style.display = 'none'
+    }
+    
+</script>
+</main>
+</body>
+</html>

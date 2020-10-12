@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Intro to JavaScript Homework</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+
+  <link rel="stylesheet" href="../homework.css">
+
+  <script src="../../assets/js/jquery-1.8.2.min.js"></script>
+  <script type="text/javascript">
+    // Powers show/hide buttons.
+    $( document ).ready(function() {
+      $("div.codebox").hide();
+    });
+    function showSolution(num) {
+      $("div#example" + num + "Code").toggle();
+    }
+  </script>
+  <style type="text/css">
+    button {
+      margin-bottom: 1.5em;
+    }
+		header h1{
+			margin-left: 25px;
+		}
+  </style>
+
+  <!--[if lt IE 9]> <script src="dist/js/html5shiv.js"></script> <![endif]-->
+</head>
+<body>
+
+  <div class="container main">
+
+    <article id="main-content" tabindex="-1" class="span9">
+      <section>
+        <h2>Off Canvas Menu</h2>
+        <img class="github-image" src="https://raw.githubusercontent.com/seytechschool/saturday-projects/master/javascript/off-canvas-menu/images/off-canvas-menu.png" />
+        <p>Why pay a fortune teller when you can just program your fortune yourself?</p>
+        <ul>
+          <li>Fork the repository <a target="_blank" href="https://github.com/seytechschool/saturday-projects">Saturday Projects</a></li>
+          <li>Github page of this project  <a target="_blank" href="https://github.com/seytechschool/saturday-projects/tree/master/javascript/off-canvas-menu">Off Canvas Menu</a></li>
+          <li>Download the source code from the forked repository</li>
+          <li>Start working on</li>
+        </ul>
+
+        <hr/>
+        <h3>What You Should See</h3>
+        <ul>
+          <li>Click on the element below to open the side navigation menu, and push this content to the right.</li>
+          <li>If a user clicks close menu it should close.</li>
+        </ul>
+
+        <hr/>
+        <h3>How to do it</h3>
+        <ul>
+          <li>First commit should be html/css code</li>
+          <li>Second commit should be a js functions</li>
+          <li>Third optional commit: add responsive, which means off-canvas menu should work only if device less than ipad</li>
+          <li>Create a pull request when you are done</li>
+        </ul>
+
+        <hr/>
+        <h3>Video</h3>
+        <iframe width="850" height="470" src="https://www.youtube.com/embed/rUQUcCZsiw8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+        <hr/>
+        <h3>Given Data</h3>
+        <ul>
+          <li>Sidebar bg color: <pre>#111</pre></li>
+          <li>Sidebar text color: <pre>#818181</pre></li>
+          <li>Sidebar hover text color: <pre>#f1f1f1</pre></li>
+          <li>Icon color: <pre>#818181</pre></li>
+        </ul>
+
+
+        <h3>Hints</h3>
+        <button onclick="showSolution(1)">Show/Hide Hint 1</button>
+        <div class="codebox" id="example1Code">
+<pre>
+  It will easier if you create html/css as it's shown in the picture first.
+</pre>
+        </div>
+
+
+        <button onclick="showSolution(2)">Show/Hide Hint 2</button>
+        <div class="codebox" id="example2Code">
+        <pre>
+          You need 2 functions: to close and to open.
+        </pre>
+        </div>
+
+        <button onclick="showSolution(3)">Show/Hide Hint 3</button>
+        <div class="codebox" id="example3Code">
+        <pre>
+          You can change width of "sidebar" and margin-left of "content" when you open/close menu
+        </pre>
+        </div>
+
+        <button onclick="showSolution(4)">Show/Hide Hint 4</button>
+        <div class="codebox" id="example4Code">
+        <pre>
+          Make Responsive: If device size is less than 768px(ipad) show sidebar and hide close/open button
+        </pre>
+        </div>
+
+<br/><br/><br/><br/><br/><br/>
+
+  </div>
+</body>
+</html>

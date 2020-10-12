@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Conditional Rendering and Rendering Lists</title>
+    <meta charset="utf-8">
+    <style>
+        .remark-slide-scaler {
+            width: 100% !important;
+            height: 100% !important;
+            transform: scale(1) !important;
+            left: 0 !important;
+            top: 0 !important;
+        }
+      @import url(https://fonts.googleapis.com/css?family=Raleway);
+      @import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Inconsolata:400,700,400italic);
+
+      body {
+      font-family: 'Droid Serif';
+    }
+    h1, h2, h3 {
+      font-family: 'Yanone Kaffeesatz';
+      font-weight: 400;
+      margin-bottom: 0;
+    }
+    .imp {
+      color: brown;
+      font-family:bold;
+    }
+    .remark-slide-content h1 { font-size: 3em; }
+    .remark-slide-content h2 { font-size: 2em; }
+    .remark-slide-content h3 { font-size: 1.6em; }
+    .footnote {
+      position: absolute;
+      bottom: 3em;
+    }
+    li p { line-height: 1.25em; }
+    .red { color: #fa0000; }
+    .large { font-size: 2em; }
+    a, a > code {
+      color: rgb(249, 38, 114);
+      text-decoration: none;
+    }
+    code {
+      background: #e7e8e2;
+      border-radius: 5px;
+    }
+    .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+    .remark-code-line-highlighted     { background-color: #373832; }
+    .pull-left {
+      float: left;
+      width: 47%;
+    }
+    .pull-right {
+      float: right;
+      width: 47%;
+    }
+    .pull-right ~ p {
+      clear: both;
+    }
+    #slideshow .slide .content code {
+      font-size: 0.8em;
+    }
+    #slideshow .slide .content pre code {
+      font-size: 0.9em;
+      padding: 15px;
+      background-color: #272822;
+
+    }
+    .remark-code {
+      font-size: 0.9em;
+      padding: 15px;
+      background-color: #000 !important;
+
+      color: white;
+
+    }
+    .remark-code-line {
+      color: #ddd;
+    } .hljs-subst {
+        color: #aaa !important;
+      }
+    .inverse {
+      background: #272822;
+      color: #777872;
+      text-shadow: 0 0 20px #333;
+    }
+
+    .hljs-number, .hljs-title, .hljs-string {
+      color: #f92672 !important;
+    }
+    .hljs-keyword {
+      color: lightgreen !important;
+    }
+
+    .inverse h1, .inverse h2 {
+      color: #f3f3f3;
+      line-height: 0.8em;
+    }
+
+    /* Slide-specific styling */
+    #slide-inverse .footnote {
+      bottom: 12px;
+      left: 20px;
+    }
+    #slide-how .slides {
+      font-size: 0.9em;
+      position: absolute;
+      top:  151px;
+      right: 140px;
+    }
+    #slide-how .slides h3 {
+      margin-top: 0.2em;
+    }
+    #slide-how .slides .first, #slide-how .slides .second {
+      padding: 1px 20px;
+      height: 90px;
+      width: 120px;
+      -moz-box-shadow: 0 0 10px #777;
+      -webkit-box-shadow: 0 0 10px #777;
+      box-shadow: 0 0 10px #777;
+    }
+    #slide-how .slides .first {
+      background: #fff;
+      position: absolute;
+      top: 20%;
+      left: 20%;
+      z-index: 1;
+    }
+    #slide-how .slides .second {
+      position: relative;
+      background: #fff;
+      z-index: 0;
+    }
+
+    /* Two-column layout */
+    .left-column {
+      color: #777;
+      width: 20%;
+      height: 92%;
+      float: left;
+    }
+    .left-column h2:last-of-type, .left-column h3:last-child {
+      color: #000;
+    }
+    .right-column {
+      width: 75%;
+      float: right;
+      padding-top: 1em;
+    }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+name: inverse
+layout: true
+class: center middle inverse
+# Conditional Rendering, Lists and Keys
+
+---
+
+---
+
+name: code
+layout: true
+class:code
+   
+---
+### Recap
+
+* Previously, we learned about the basics of React components
+* Functional components - takes in props (via the first argument of the function), returns React elements (as the return value of the function)
+* ES6 class components - takes in props (via this.state), returns React elements (as the return value of the render class function), **can** have state (via this.state/this.setState) 
+* Both types of components can be used in the same way
+
+```javascript
+const FunctionalComponent = (props) => <div>{props.value}</div>
+```
+
+```javascript
+class ClassComponent extends React.Component {
+  render() {
+    return (
+      <div>{this.props.value}</div>
+    );
+  }
+}
+```
+
+```javascript
+const App = () => <Component propName={propValue} />;
+```
+
+---
+### Exercise
+
+* Lets do one exercise together
+* In order to solidify our undertanding of state && props, functional and es6 class Components
+
+* We will create one es6 class component 
+* Initialize state inside class component (ex: name: "Ulan");
+* One functional component that will accept state as props from parent class component
+* Then render the result from functional component 
+
+
+---
+
+### Conditional Rendering
+- Conditional rendering in React works the same way conditions work in JavaScript using conditional operators
+- Based on condition you can only render some of your components.
+
+```jsx
+const UserGreeting = () => <h1>Welcome back!</h1>;
+
+const GuestGreeting = () => <h1>Please sign up.</h1>;
+
+const Greeting = (props) => {
+  if (props.renderUser) {
+    return <UserGreeting />;
+  } else {
+    return <GuestGreeting />;
+  }
+};
+
+export default () => (
+  <Greeting renderUser={true} />
+);
+```
+
+---
+
+### Inline Expressions with Logical &&
+
+- We can use any expression inside curly braces.
+- This includes the JavaScript logical && operator.
+- It works because in JavaScript, **true && expression** always evaluates to expression, and **false && expression** always evaluates to false.
+
+```jsx
+const trueTest = true && "Hello" // = "Hello"
+const falseTest = false && "Hello" // = false
+```
+
+* Let's use the property of the && operator above to conditionally show a message:
+
+```jsx
+const showHelloWorld = false;
+const HelloWorld = <div>Hello World</div>;
+
+// If showHelloWorld is true, renders "<i><div>Hello World</div></i>"
+// If showHelloWorld is false, renders "<i></i>"
+const FancyMaybeHelloWorld = () => (
+  <i>{showHelloWorld && HelloWorld}</i>
+);
+```
+
+---
+### Example
+
+```jsx
+        function Chat(props) {
+          const unreadMessages = props.unreadMessages;
+          return (
+            <div>
+              <h1>Hello!</h1>
+              {unreadMessages.length > 0 &&
+                <h2>
+                  You have {unreadMessages.length} unread messages.
+                </h2>
+              }
+            </div>
+          );
+        }
+
+        const messages = ['bank', 'school', 'friend'];
+        Chat.defaultProps = {unreadMessages: messages }
+```
+
+---
+
+### Inline Expressions with Conditional
+
+- Another method for conditionally rendering elements inline is to use the JavaScript conditional operator:
+- also called as ternary operators
+
+```jsx
+condition ? true : false
+```
+
+* We can use the conditional operator to render elements inline
+
+```jsx
+const isHello = true;
+
+// If isHello is true, renders "<div>Hello World</div>"
+// If isHello is false, renders "<div>Goodbye World</div>"
+const HelloOrGoodbyeWorld = () => (
+  <div>{isHello ? 'Hello' : 'Goodbye'} World</div>
+);
+```
+
+---
+### Exercise
+
+* Create a ExamChecker Component
+* set condition as score (either on state or regular variable)
+* Based on the score render the output
+* conditions: > 30 - FAIL, < 30 - PASS
+* bonus you can create more conditions 
+
+---
+### Embedding Expressions in JSX
+
+* JSX allows for embedding expressions by wrapping them in curly braces
+
+```jsx
+// Renders as "<div>Hello World</div>"
+const HelloWorld = () => (
+  <div>{'Hello' + ' ' + 'World'}</div>
+);
+```
+
+```jsx
+// Renders as "<div>3</div>"
+const OnePlusTwo = () => (
+  <div>{1 + 2}</div>
+);
+```
+
+- The following is an interesting case - an embedded expression that evaluates to a boolean false renders nothing (like if `null` was passed)
+
+```jsx
+// Renders as "<div></div>"
+const False = () => (
+  <div>{false}</div>
+);
+```
+
+---
+
+### JSX Elements are Expressions Too!
+
+```jsx
+const element = <div>Hello World</div>;
+
+// Renders as "<i><div>Hello World</div></i>"
+const FancyHelloWorld = () => (
+  <i>{element}</i>
+);
+```
+
+---
+
+## Mapping Arrays in React
+
+- We learn how map() function works in javascript
+- Similarly we can also map an array and render elements in React Components.
+
+```jsx
+const tasks = ['eat', 'exercise', 'read'];
+
+const Todo = () => (
+  <ul>
+    {tasks.map(task => (
+      <li>{task}</li>
+    ))}
+  </ul>
+);
+```
+- However, we have a problem - the console will display a warning: "Warning: Each child in an array or iterator should have a unique "key" prop."
+
+---
+
+## Keys
+
+* Key give the elements a stable identity
+* Helps efficiently update of the user interface 
+* It is used by the virtual DOM reconciler to determine whether an element in an array has changed
+* An assumption that the reconciler makes is that if a key is unchanged, then an element does not need to be re-rendered
+* For this reason, using an index as the key is considered to be an anti-pattern because adding an element to the beginning/middle of the list can cause the whole list of elements to re-render
+* An important thing to note is that keys only need to be unique among their siblings in an array - they do not need to be globally unique
+* With this in mind, let's fix our previous bug:
+
+const tasks = [
+  {'id': 1, 'value': 'eat'}, 
+  {'id': 2, 'value': 'exercise'}, 
+  {'id': 3, 'value': 'read'} 
+  ];
+```jsx
+const Todo = () => (
+  <ul>
+    {tasks.map(task => (
+      <li key={task.id}>{task.value}</li>
+    ))}
+  </ul>
+);
+```
+* When you don’t have stable IDs for rendered items, you may use the item index as a key as a last resort:
+* Conditions: if your list is static or if you don't don't want to delete from or filter your list.
+ 
+```jsx
+const Todo = () => (
+  <ul>
+    {tasks.map((task, index) => (
+      <li key={index}>{task}</li>
+    ))}
+  </ul>
+);
+```
+
+---
+### Exercise
+
+* Given users => ``` let users = ["eddy", "brendan", "goose", "eli", "marcos"]; ```
+* Render each user <li>{user}</li> 
+* Don't forget to give keys to each user 
+
+
+---
+### Final Exercise
+
+* Create a Counter Component
+* And build a basic counter with 2 buttons to increase and decrease
+* hint: we will use of functions inside our component
+
+
+---
+
+## References
+
+* https://reactjs.org/docs/conditional-rendering.html
+* https://reactjs.org/docs/lists-and-keys.html
+* https://medium.com/@robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318
+* https://reactjs.org/docs/reconciliation.html#recursing-on-children
+
+
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create({
+          highlightLines: true,
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Higher Order Components</title>
+    <meta charset="utf-8">
+    <style>
+        .remark-slide-scaler {
+            width: 100% !important;
+            height: 100% !important;
+            transform: scale(1) !important;
+            left: 0 !important;
+            top: 0 !important;
+        }
+      @import url(https://fonts.googleapis.com/css?family=Raleway);
+      @import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Inconsolata:400,700,400italic);
+
+      body {
+          font-family: 'Lato';
+      }
+
+      h1, h2, h3 {
+        font-family: 'Raleway';
+        font-weight: normal;
+      }
+
+      .remark-code, .remark-inline-code {
+          font-family: 'Inconsolata';
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+
+# Higher Order Components
+
+---
+
+## Basics
+
+* Closely related concept: higher-order functions are functions that take in functions and returns a new function
+* A higher-order component is a function that takes in a component and returns a new component
+    * Recall that React components are actually functions, so higher-order components are higher-order functions!
+* This is **not** a React-exclusive concept - it is the result of applying functional composition to React components
+
+---
+
+## Why?
+
+* It helps us abstract out and reuse *behaviors* in our components
+    * Behaviors = "Things that components do" (usually involves state instead of markup)
+    * Examples of behaviors:
+        * Fetching data
+        * Logging
+        * Listening for events
+        * Intercepting rendering
+        * ...
+
+---
+
+## How?
+
+* There are two main ways of implementing higher-order components
+    * Inheritance Inversion
+    * Props Proxy
+
+???
+
+* These are just names, you don't need to remember them
+
+---
+
+## Inheritance Inversion
+
+```jsx
+const iiHOC = WrappedComponent => {
+* return class EnhancedComponent extends WrappedComponent {
+    render() {
+*     return super.render();
+    }
+  }
+}
+```
+
+* The component that is returned from the HOC has access to all the `this` values of the wrapped component
+* Useful things we can do with this pattern:
+    * Read and modify the elements tree outputted by the render method of the wrapped component
+    * Read/add/edit/remove props in the react elements outputted by the render method of the wrapped component
+    * Read/edit/delete state of the wrapped component
+    * Conditionally display the element tree
+    * Wrapping the element tree for styling purposes
+* Shortcomings of this pattern:
+    * No ability to pass props directly to the original component
+* This is by far the less common method of implementing HOCs
+
+???
+
+* The example is a trivial implementation - it does not add any additional behaviors to the wrapped component
+
+---
+
+## Props Proxy
+
+```jsx
+const ppHOC = WrappedComponent => {
+* return class EnhancedComponent extends React.Component {
+    render() {
+*     return (<WrappedComponent {...this.props} />);
+    }
+  }
+}
+```
+
+* Useful things we can do with this pattern:
+    * Add/modify/delete props
+    * Abstracting state
+    * Wrapping the wrapped component with other elements
+* This is the most common method of implementing HOCs because of its ability to modify props
+
+???
+
+* The example is a trivial implementation - it does not add any additional behaviors to the wrapped component
+
+---
+
+## Gotcha - Component Naming
+
+* When you wrap a component with a HOC, you lose the name of the wrapped component
+
+```jsx
+HOC.displayName = `HOC(${getDisplayName(WrappedComponent)})`
+
+// or
+
+class HOC extends ... {
+  static displayName = `HOC(${getDisplayName(WrappedComponent)})`
+  ...
+}
+```
+
+```jsx
+function getDisplayName(WrappedComponent) {
+  return WrappedComponent.displayName || WrappedComponent.name || 'Component'
+}
+```
+
+* **NOTE**: This is also implemented by the [recompose library](https://github.com/acdlite/recompose) (a higher-order component utility library)
+
+???
+
+* This could negatively impact developing/debugging
+
+---
+
+## Libraries that use the HOC pattern
+
+* [react-redux](https://github.com/reactjs/react-redux) - React bindings for Redux, a very popular global state management library
+* [react-router](https://github.com/ReactTraining/react-router) - React routing library
+* [react-apollo](https://github.com/apollographql/react-apollo) - React bindings for Apollo Client, a GraphQL client library
+* [react-jss](https://github.com/cssinjs/react-jss) - React bindings for JSS, a css-in-js library
+* [recompose](https://github.com/acdlite/recompose) - HOC utility belt
+* Many other libraries...
+
+???
+
+* This is not accidental, it is because HOCs are a great way of abstracting out behaviors in programs
+
+---
+
+class: center, middle
+
+# Questions?
+
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create({
+          highlightLines: true,
+      });
+    </script>
+  </body>
+</html>
