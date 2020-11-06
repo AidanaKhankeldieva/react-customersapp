@@ -102,19 +102,17 @@ function ProjectDashboardApp(props) {
 	return (
 		<FusePageSimple
 			classes={{
-				header: 'min-h-160 h-160',
-				toolbar: 'min-h-48 h-48',
+				header: 'h-0',
 				rightSidebar: 'w-288',
 				content: classes.content
 			}}
-			header={
-				<div className="flex flex-col justify-between flex-1 px-24 pt-24">
+			/* header={
+					<div className="flex flex-col justify-between flex-1 px-24 pt-24">
 					<div className="flex justify-between items-start">
-						<Typography className="py-0 sm:py-24 text-24 md:text-32" variant="h4">
-							Welcome back, John!
-						</Typography>
+						
 						<Hidden lgUp>
 							<IconButton
+								className="right-off-canvas-menu"
 								onClick={ev => pageLayout.current.toggleRightSidebar()}
 								aria-label="open left sidebar"
 								color="inherit"
@@ -157,7 +155,7 @@ function ProjectDashboardApp(props) {
 						</div>
 					</div>
 				</div>
-			}
+			} */
 			contentToolbar={
 				<Tabs
 					value={tabValue}
@@ -175,6 +173,16 @@ function ProjectDashboardApp(props) {
 			}
 			content={
 				<div className="p-12">
+					<Hidden lgUp>
+							<IconButton
+								className="right-off-canvas-menu"
+								onClick={ev => pageLayout.current.toggleRightSidebar()}
+								aria-label="open left sidebar"
+								color="inherit"
+							>
+								<Icon>menu</Icon>
+							</IconButton>
+						</Hidden>
 					{tabValue === 0 && (
 						<FuseAnimateGroup
 							className="flex flex-wrap"

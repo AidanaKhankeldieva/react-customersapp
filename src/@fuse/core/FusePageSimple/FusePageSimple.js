@@ -156,7 +156,6 @@ const FusePageSimple = React.forwardRef((props, ref) => {
 			rightSidebarRef.current.toggleSidebar();
 		}
 	}));
-
 	return (
 		<div id="simple-content" className={clsx(classes.root, props.innerScroll && classes.innerScroll)} ref={rootRef}>
 			<div className={clsx(classes.header, classes.topBg)} />
@@ -187,9 +186,9 @@ const FusePageSimple = React.forwardRef((props, ref) => {
 						className={classes.contentWrapper}
 						enable={props.innerScroll && !props.sidebarInner}
 					>
-						{/* {props.header && !props.sidebarInner && (
+						{props.header && !props.sidebarInner && (
 							<FusePageSimpleHeader header={props.header} classes={classes} />
-						)} */}
+						)}
 
 						{props.contentToolbar && <div className={classes.toolbar}>{props.contentToolbar}</div>}
 

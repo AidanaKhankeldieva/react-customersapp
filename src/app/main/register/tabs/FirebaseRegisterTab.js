@@ -37,115 +37,107 @@ function FirebaseRegisterTab(props) {
 
 	return (
 		<div className="w-full">
-			<Formsy
-				onValidSubmit={handleSubmit}
-				onValid={enableButton}
-				onInvalid={disableButton}
-				ref={formRef}
-				className="flex flex-col justify-center w-full"
-			>
-				<TextFieldFormsy
-					className="mb-16"
-					type="text"
-					name="displayName"
-					label="Display name"
-					validations={{
-						minLength: 4
-					}}
-					validationErrors={{
-						minLength: 'Min character length is 4'
-					}}
-					InputProps={{
-						endAdornment: (
-							<InputAdornment position="end">
-								<Icon className="text-20" color="action">
-									person
-								</Icon>
-							</InputAdornment>
-						)
-					}}
-					variant="outlined"
-					required
-				/>
+            <Formsy
+                onValidSubmit={handleSubmit}
+                onValid={enableButton}
+                onInvalid={disableButton}
+                ref={formRef}
+                className="flex flex-col justify-center w-full"
+            >
+                <TextFieldFormsy
+                    className="mb-16"
+                    type="text"
+                    name="displayName"
+                    label="Display name"
+                    validations={{
+                        minLength: 4
+                    }}
+                    validationErrors={{
+                        minLength: 'Min character length is 4'
+                    }}
+                    InputProps={{
+                        endAdornment: <InputAdornment position="end"><Icon className="text-20" color="action">person</Icon></InputAdornment>
+                    }}
+                    variant="outlined"
+                    required
+                />
 
-				<TextFieldFormsy
-					className="mb-16"
-					type="text"
-					name="email"
-					label="Email"
-					validations="isEmail"
-					validationErrors={{
-						isEmail: 'Please enter a valid email'
-					}}
-					InputProps={{
-						endAdornment: (
-							<InputAdornment position="end">
-								<Icon className="text-20" color="action">
-									email
-								</Icon>
-							</InputAdornment>
-						)
-					}}
-					variant="outlined"
-					required
-				/>
+                <TextFieldFormsy
+                    className="mb-16"
+                    type="text"
+                    name="email"
+                    label="Email"
+                    validations="isEmail"
+                    validationErrors={{
+                        isEmail: 'Please enter a valid email'
+                    }}
+                    InputProps={{
+                        endAdornment: <InputAdornment position="end"><Icon className="text-20" color="action">email</Icon></InputAdornment>
+                    }}
+                    variant="outlined"
+                    required
+                />
 
-				<TextFieldFormsy
-					className="mb-16"
-					type="password"
-					name="password"
-					label="Password"
-					validations="equalsField:password-confirm"
-					validationErrors={{
-						equalsField: 'Passwords do not match'
-					}}
-					InputProps={{
-						endAdornment: (
-							<InputAdornment position="end">
-								<Icon className="text-20" color="action">
-									vpn_key
-								</Icon>
-							</InputAdornment>
-						)
-					}}
-					variant="outlined"
-					required
-				/>
+                <TextFieldFormsy
+                    className="mb-16"
+                    type="password"
+                    name="password"
+                    label="Password"
+                    validations="equalsField:password-confirm"
+                    validationErrors={{
+                        equalsField: 'Passwords do not match'
+                    }}
+                    InputProps={{
+                        endAdornment: <InputAdornment position="end"><Icon className="text-20" color="action">vpn_key</Icon></InputAdornment>
+                    }}
+                    variant="outlined"
+                    required
+                />
 
-				<TextFieldFormsy
-					className="mb-16"
-					type="password"
-					name="password-confirm"
-					label="Confirm Password"
-					validations="equalsField:password"
-					validationErrors={{
-						equalsField: 'Passwords do not match'
-					}}
-					InputProps={{
-						endAdornment: (
-							<InputAdornment position="end">
-								<Icon className="text-20" color="action">
-									vpn_key
-								</Icon>
-							</InputAdornment>
-						)
-					}}
-					variant="outlined"
-					required
-				/>
+                <TextFieldFormsy
+                    className="mb-16"
+                    type="password"
+                    name="password-confirm"
+                    label="Confirm Password"
+                    validations="equalsField:password"
+                    validationErrors={{
+                        equalsField: 'Passwords do not match'
+                    }}
+                    InputProps={{
+                        endAdornment: <InputAdornment position="end"><Icon className="text-20" color="action">vpn_key</Icon></InputAdornment>
+                    }}
+                    variant="outlined"
+                    required
+                />
 
-				<Button
-					type="submit"
-					variant="contained"
-					color="primary"
-					className="w-full mx-auto mt-16 normal-case"
-					aria-label="REGISTER WITH FIREBASE"
-					disabled={!isFormValid}
-				>
-					Register with Firebase
-				</Button>
-			</Formsy>
-		</div>
+                <TextFieldFormsy
+                    className="mb-16"
+                    type="text"
+                    name="register-code"
+                    label="Register Code"
+                    validations="equals:seytech"
+                    validationErrors={{
+                        equalsField: 'Wrong Register Code'
+                    }}
+                    InputProps={{
+                        endAdornment: <InputAdornment position="end"><Icon className="text-20" color="action">vpn_key</Icon></InputAdornment>
+                    }}
+                    variant="outlined"
+                    required
+                />
+
+                <Button
+                    type="submit"
+                    variant="contained"
+                    color="primary"
+                    className="w-full mx-auto mt-16 normal-case"
+                    aria-label="REGISTER"
+                    disabled={!isFormValid}
+                >
+                    Register
+                </Button>
+            </Formsy>
+        </div>
 	);
 }
 

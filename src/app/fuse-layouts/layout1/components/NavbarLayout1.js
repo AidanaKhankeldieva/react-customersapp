@@ -41,11 +41,11 @@ function NavbarLayout1(props) {
 				</div>
 
 				<Hidden mdDown>
-					<NavbarFoldedToggleButton className="w-40 h-40 p-0" />
+					<NavbarFoldedToggleButton className="app-bar w-40 h-40 p-0" />
 				</Hidden>
 
 				<Hidden lgUp>
-					<NavbarMobileToggleButton className="w-40 h-40 p-0">
+					<NavbarMobileToggleButton className="app-bar w-40 h-40 p-0">
 						<Icon>{theme.direction === 'ltr' ? 'arrow_back' : 'arrow_forward'}"</Icon>
 					</NavbarMobileToggleButton>
 				</Hidden>

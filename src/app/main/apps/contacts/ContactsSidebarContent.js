@@ -70,7 +70,7 @@ function ContactsSidebarContent(props) {
 						<ListItem
 							button
 							component={NavLinkAdapter}
-							to="/apps/contacts/all"
+							to="/apps/students/all"
 							activeClassName="active"
 							className={classes.listItem}
 						>
@@ -82,7 +82,7 @@ function ContactsSidebarContent(props) {
 						<ListItem
 							button
 							component={NavLinkAdapter}
-							to="/apps/contacts/frequent"
+							to="/apps/students/frequent"
 							activeClassName="active"
 							className={classes.listItem}
 						>
@@ -94,7 +94,7 @@ function ContactsSidebarContent(props) {
 						<ListItem
 							button
 							component={NavLinkAdapter}
-							to="/apps/contacts/starred"
+							to="/apps/students/starred"
 							activeClassName="active"
 							className={classes.listItem}
 						>

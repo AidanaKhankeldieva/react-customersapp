@@ -69,23 +69,25 @@ function Course(props) {
 	}
 
 	const activeStep = course && course.activeStep !== 0 ? course.activeStep : 1;
-
+	const ifNotSlide = course && course.type !== 'slide';
 	return (
-		<FusePageSimple
+		<div id="course-page">
+			<FusePageSimple
 			classes={{
-				content: 'flex flex-col flex-auto overflow-hidden',
+				content: 'flex flex-col flex-auto overflow-hidden course',
 				header: 'h-72 min-h-72'
 			}}
 			header={
-				<div className="flex flex-1 items-center px-16 lg:px-24">
-					<Hidden lgUp>
+				<div className="flex flex-1 items-center px-16 lg:px-24 custom-subcourse-header">
+					{/* <Hidden lgUp>
 						<IconButton
+							className="right-off-canvas-menu"
 							onClick={ev => pageLayout.current.toggleLeftSidebar()}
 							aria-label="open left sidebar"
 						>
 							<Icon>menu</Icon>
 						</IconButton>
-					</Hidden>
+					</Hidden> */}
 					<IconButton to="/courses" component={Link}>
 						<Icon>{theme.direction === 'ltr' ? 'arrow_back' : 'arrow_forward'}</Icon>
 					</IconButton>
@@ -120,6 +122,37 @@ function Course(props) {
                                     })}
 							</SwipeableViews>
 						</FuseScrollbars>
+						{
+                            false && ifNotSlide && (
+                              <div className="flex justify-center w-full absolute pin-l pin-r pin-b pb-16 md:pb-32">
+                                  <div className="flex justify-between w-full max-w-xl px-8">
+                                      <div>
+                                        {activeStep !== 1 && (
+                                          <Fab className="" color="secondary" onClick={this.handleBack}>
+                                              <Icon>chevron_left</Icon>
+                                          </Fab>
+                                        )}
+                                      </div>
+                                      <div>
+                                        {activeStep < course.steps.length ? (
+                                            <Fab className="" color="secondary" onClick={this.handleNext}>
+                                                <Icon>chevron_right</Icon>
+                                            </Fab>
+                                          ) :
+                                          (
+                                            <Fab
+                                              className={classes.successFab}
+                                              to="/courses"
+                                              component={Link}
+                                            >
+                                                <Icon>check</Icon>
+                                            </Fab>
+                                          )}
+                                      </div>
+                                  </div>
+                              </div>
+                            )
+                          }
 
 						{
 							/*
@@ -166,6 +199,7 @@ function Course(props) {
 			innerScroll
 			ref={pageLayout}
 		/>
+		</div>
 	);
 }
 

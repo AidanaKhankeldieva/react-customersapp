@@ -1,4 +1,4 @@
-import './db/academy-db';
+//import './db/academy-db';
 import './db/analytics-dashboard-db';
 import './db/auth-db';
 import './db/calendar-db';

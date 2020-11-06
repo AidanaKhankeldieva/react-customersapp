@@ -12,174 +12,165 @@ i18next.addResourceBundle('ar', 'navigation', ar);
 
 const navigationConfig = [
 	{
-		id: 'applications',
-		title: 'Applications',
-		translate: 'APPLICATIONS',
-		type: 'group',
-		icon: 'apps',
+		id: 'dashboards',
+		title: 'Dashboards',
+		translate: 'DASHBOARDS',
+		type: 'collapse',
+		icon: 'dashboard',
 		children: [
 			{
-				id: 'dashboards',
-				title: 'Dashboards',
-				translate: 'DASHBOARDS',
-				type: 'collapse',
-				icon: 'dashboard',
-				children: [
-					{
-						id: 'analytics-dashboard',
-						title: 'Analytics',
-						type: 'item',
-						url: '/apps/dashboards/analytics'
-					},
-					{
-						id: 'project-dashboard',
-						title: 'Project',
-						type: 'item',
-						url: '/apps/dashboards/project'
-					}
-				]
-			},
-			{
-				id: 'calendar',
-				title: 'Calendar',
-				translate: 'CALENDAR',
+				id: 'analytics-dashboard',
+				title: 'Analytics',
 				type: 'item',
-				icon: 'today',
-				url: '/apps/calendar'
+				url: '/apps/dashboards/analytics'
 			},
 			{
-				id: 'e-commerce',
-				title: 'E-Commerce',
-				translate: 'ECOMMERCE',
-				type: 'collapse',
-				icon: 'shopping_cart',
-				url: '/apps/e-commerce',
-				children: [
-					{
-						id: 'e-commerce-products',
-						title: 'Products',
-						type: 'item',
-						url: '/apps/e-commerce/products',
-						exact: true
-					},
-					{
-						id: 'e-commerce-product-detail',
-						title: 'Product Detail',
-						type: 'item',
-						url: '/apps/e-commerce/products/1/a-walk-amongst-friends-canvas-print',
-						exact: true
-					},
-					{
-						id: 'e-commerce-new-product',
-						title: 'New Product',
-						type: 'item',
-						url: '/apps/e-commerce/products/new',
-						exact: true
-					},
-					{
-						id: 'e-commerce-orders',
-						title: 'Orders',
-						type: 'item',
-						url: '/apps/e-commerce/orders',
-						exact: true
-					},
-					{
-						id: 'e-commerce-order-detail',
-						title: 'Order Detail',
-						type: 'item',
-						url: '/apps/e-commerce/orders/1',
-						exact: true
-					}
-				]
-			},
-			{
-				id: 'academy',
-				title: 'Academy',
-				translate: 'ACADEMY',
+				id: 'project-dashboard',
+				title: 'Project',
 				type: 'item',
-				icon: 'school',
-				url: '/courses'
-			},
-			{
-				id: 'mail',
-				title: 'Mail',
-				translate: 'MAIL',
-				type: 'item',
-				icon: 'email',
-				url: '/apps/mail',
-				badge: {
-					title: 25,
-					bg: '#F44336',
-					fg: '#FFFFFF'
-				}
-			},
-			{
-				id: 'todo',
-				title: 'To-Do',
-				translate: 'TODO',
-				type: 'item',
-				icon: 'check_box',
-				url: '/apps/todo',
-				badge: {
-					title: 3,
-					bg: 'rgb(255, 111, 0)',
-					fg: '#FFFFFF'
-				}
-			},
-			{
-				id: 'file-manager',
-				title: 'File Manager',
-				translate: 'FILE_MANAGER',
-				type: 'item',
-				icon: 'folder',
-				url: '/apps/file-manager'
-			},
-			{
-				id: 'contacts',
-				title: 'Contacts',
-				translate: 'CONTACTS',
-				type: 'item',
-				icon: 'account_box',
-				url: '/apps/contacts/all'
-			},
-			{
-				id: 'chat',
-				title: 'Chat',
-				translate: 'CHAT',
-				type: 'item',
-				icon: 'chat',
-				url: '/apps/chat',
-				badge: {
-					title: 13,
-					bg: 'rgb(9, 210, 97)',
-					fg: '#FFFFFF'
-				}
-			},
-			{
-				id: 'scrumboard',
-				title: 'Scrumboard',
-				translate: 'SCRUMBOARD',
-				type: 'item',
-				icon: 'assessment',
-				url: '/apps/scrumboard'
-			},
-			{
-				id: 'notes',
-				title: 'Notes',
-				translate: 'NOTES',
-				type: 'item',
-				icon: 'note',
-				url: '/apps/notes'
+				url: '/apps/dashboards/project'
 			}
 		]
 	},
+	{
+		id: 'calendar',
+		title: 'Calendar',
+		translate: 'CALENDAR',
+		type: 'item',
+		icon: 'today',
+		url: '/apps/calendar'
+	},
+	/* {
+		id: 'e-commerce',
+		title: 'E-Commerce',
+		translate: 'ECOMMERCE',
+		type: 'collapse',
+		icon: 'shopping_cart',
+		url: '/apps/e-commerce',
+		children: [
+			{
+				id: 'e-commerce-products',
+				title: 'Products',
+				type: 'item',
+				url: '/apps/e-commerce/products',
+				exact: true
+			},
+			{
+				id: 'e-commerce-product-detail',
+				title: 'Product Detail',
+				type: 'item',
+				url: '/apps/e-commerce/products/1/a-walk-amongst-friends-canvas-print',
+				exact: true
+			},
+			{
+				id: 'e-commerce-new-product',
+				title: 'New Product',
+				type: 'item',
+				url: '/apps/e-commerce/products/new',
+				exact: true
+			},
+			{
+				id: 'e-commerce-orders',
+				title: 'Orders',
+				type: 'item',
+				url: '/apps/e-commerce/orders',
+				exact: true
+			},
+			{
+				id: 'e-commerce-order-detail',
+				title: 'Order Detail',
+				type: 'item',
+				url: '/apps/e-commerce/orders/1',
+				exact: true
+			}
+		]
+	}, */
+	/* {
+		id: 'courses',
+		title: 'Courses',
+		translate: 'Courses',
+		type: 'item',
+		icon: 'school',
+		url: '/courses'
+	}, */
+	/* {
+		id: 'mail',
+		title: 'Mail',
+		translate: 'MAIL',
+		type: 'item',
+		icon: 'email',
+		url: '/apps/mail',
+		badge: {
+			title: 25,
+			bg: '#F44336',
+			fg: '#FFFFFF'
+		}
+	}, */
+	{
+		id: 'todo',
+		title: 'To-Do',
+		translate: 'TODO',
+		type: 'item',
+		icon: 'check_box',
+		url: '/apps/todo',
+		badge: {
+			title: 3,
+			bg: 'rgb(255, 111, 0)',
+			fg: '#FFFFFF'
+		}
+	},
+	/* {
+		id: 'file-manager',
+		title: 'File Manager',
+		translate: 'FILE_MANAGER',
+		type: 'item',
+		icon: 'folder',
+		url: '/apps/file-manager'
+	}, */
+	{
+		id: 'students',
+		title: 'Students',
+		translate: 'Students',
+		type: 'item',
+		icon: 'account_box',
+		url: '/apps/students/all'
+	},
+	{
+		id: 'chat',
+		title: 'Chat',
+		translate: 'CHAT',
+		type: 'item',
+		icon: 'chat',
+		url: '/apps/chat',
+		badge: {
+			title: 13,
+			bg: 'rgb(9, 210, 97)',
+			fg: '#FFFFFF'
+		}
+	},
+	/* {
+		id: 'scrumboard',
+		title: 'Scrumboard',
+		translate: 'SCRUMBOARD',
+		type: 'item',
+		icon: 'assessment',
+		url: '/apps/scrumboard'
+	},
+	{
+		id: 'notes',
+		title: 'Notes',
+		translate: 'NOTES',
+		type: 'item',
+		icon: 'note',
+		url: '/apps/notes'
+	} */
 	{
 		id: 'pages',
 		title: 'Pages',
 		type: 'group',
 		icon: 'pages',
 		children: [
-			{
+			/* {
 				id: 'authentication',
 				title: 'Authentication',
 				type: 'collapse',
@@ -263,15 +254,15 @@ const navigationConfig = [
 						url: '/pages/auth/mail-confirm'
 					}
 				]
-			},
-			{
+			}, */
+			/* {
 				id: 'coming-soon',
 				title: 'Coming Soon',
 				type: 'item',
 				icon: 'alarm',
 				url: '/pages/coming-soon'
-			},
-			{
+			}, */
+			/* {
 				id: 'errors',
 				title: 'Errors',
 				type: 'collapse',
@@ -290,7 +281,7 @@ const navigationConfig = [
 						url: '/pages/errors/error-500'
 					}
 				]
-			},
+			}, */
 			{
 				id: 'invoice',
 				title: 'Invoice',
@@ -311,14 +302,14 @@ const navigationConfig = [
 					}
 				]
 			},
-			{
+			/* {
 				id: 'maintenance',
 				title: 'Maintenance',
 				type: 'item',
 				icon: 'build',
 				url: '/pages/maintenance'
-			},
-			{
+			}, */
+			/* {
 				id: 'pricing',
 				title: 'Pricing',
 				type: 'collapse',
@@ -343,15 +334,15 @@ const navigationConfig = [
 						url: '/pages/pricing/style-3'
 					}
 				]
-			},
-			{
+			}, */
+			/* {
 				id: 'profile',
 				title: 'Profile',
 				type: 'item',
 				icon: 'person',
 				url: '/pages/profile'
-			},
-			{
+			}, */
+			/* {
 				id: 'search',
 				title: 'Search',
 				type: 'collapse',
@@ -370,17 +361,17 @@ const navigationConfig = [
 						url: '/pages/search/modern'
 					}
 				]
-			},
-			{
+			}, */
+			/* {
 				id: 'faq',
 				title: 'Faq',
 				type: 'item',
 				icon: 'help',
 				url: '/pages/faq'
-			},
+			}, */
 			{
 				id: 'knowledge-base',
-				title: 'Knowledge Base',
+				title: 'Snippets',
 				type: 'item',
 				icon: 'import_contacts',
 				url: '/pages/knowledge-base'
@@ -407,13 +398,13 @@ const navigationConfig = [
 				icon: 'text_fields',
 				url: '/ui/typography'
 			},
-			{
+			/* {
 				id: 'helper-classes',
 				title: 'Helper Classes',
 				type: 'item',
 				icon: 'help',
 				url: '/ui/helper-classes'
-			},
+			}, */
 			{
 				id: 'page-layouts',
 				title: 'Page Layouts',
@@ -575,7 +566,7 @@ const navigationConfig = [
 		]
 	},
 	DocumentationNavigation,
-	{
+	/* {
 		type: 'divider',
 		id: 'divider-1'
 	},
@@ -784,7 +775,8 @@ const navigationConfig = [
 				]
 			}
 		]
-	}
+	} */
 ];
 
 export default navigationConfig;
+//export default [];

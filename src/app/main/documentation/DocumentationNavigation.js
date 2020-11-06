@@ -8,7 +8,7 @@ const DocumentationNavigation = {
 	type: 'group',
 	icon: 'star',
 	children: [
-		{
+		/* {
 			id: 'changelog',
 			title: 'Changelog',
 			type: 'item',
@@ -198,7 +198,7 @@ const DocumentationNavigation = {
 					url: '/documentation/authentication/auth0'
 				}
 			]
-		},
+		}, */
 		FuseComponentsNavigation,
 		MaterialUIComponentsNavigation,
 		ThirdPartyComponentsNavigation

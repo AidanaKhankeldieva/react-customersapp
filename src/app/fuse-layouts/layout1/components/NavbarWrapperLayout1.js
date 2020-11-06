@@ -140,7 +140,7 @@ function NavbarWrapperLayout1(props) {
 	return (
 		<>
 			<ThemeProvider theme={navbarTheme}>
-				<div id="fuse-navbar" className={clsx(classes.wrapper, folded && classes.wrapperFolded)}>
+				<div id="fuse-navbar" className={clsx(classes.wrapper, folded && classes.wrapperFolded && foldedAndClosed && "folded")}>
 					<Hidden mdDown>
 						<div
 							className={clsx(
@@ -157,7 +157,6 @@ function NavbarWrapperLayout1(props) {
 							<NavbarLayout1 className={classes.navbarContent} />
 						</div>
 					</Hidden>
-
 					<Hidden lgUp>
 						<Drawer
 							anchor={config.navbar.position}

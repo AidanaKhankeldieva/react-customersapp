@@ -23,12 +23,11 @@
     left: 0px;
     width: calc(100vw);
 }
-@media screen and (min-width: 1280px) {
-    #fuse-toolbar {
-        left: 280px;
-        width: calc(100vw - 280px);
+/* @media screen and (min-width: 1280px) {
+    .navbar-icon{
+        margin-left: 60px;
     }
-  }
+  } */
 #fuse-toolbar.sub-course {
     float: right;
     width: 300px;
@@ -59,6 +58,23 @@ a:not([role=button]) {
     color: #2196F3;
 }
 /* middle part of the page */
-#simple-content {
+#simple-content .container {
     padding-top: 64px;
+}
+/* mid part for courses */
+#course-page #simple-content .container{
+    padding-top: 0px;
+}
+#fuse-navbar {
+    z-index: 10;
+}
+
+/* when folded app-bar(navbar 3 line)  moves left*/
+.folded .app-bar {
+    margin-left: -20px;
+}
+.right-off-canvas-menu {
+    position: absolute;
+    right: 10px;
+    top: 0px;
 }

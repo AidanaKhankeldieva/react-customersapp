@@ -65,7 +65,7 @@ function ReactTableDoc() {
 
 			<ul>
 				<li className="mb-8">
-					<Link to="/apps/contacts">Contacts App</Link>
+					<Link to="/apps/students">Students</Link>
 				</li>
 			</ul>
 		</>

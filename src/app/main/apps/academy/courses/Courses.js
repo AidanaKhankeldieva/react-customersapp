@@ -43,6 +43,13 @@ const useStyles = makeStyles(theme => ({
 }));
 
 function Courses(props) {
+	/* state = {
+        data: this.props.courses,
+        isAdmin: this.props.user.role === 'admin',
+        guestUser: this.props.user.data.email === 'guest@seytech.co',
+        limitedUser: this.props.user.data.cohort === '7-20',
+        demoStudent:  this.props.user.data.cohort === undefined && !this.props.user.role.includes('admin')
+    }; */
 	const dispatch = useDispatch();
 	const sections = useSelector(selectCourses);
 	const categories = useSelector(selectCategories);
@@ -97,7 +104,7 @@ function Courses(props) {
 	return (
 		<div className="flex flex-col flex-auto flex-shrink-0 w-full">
 			<div className="flex flex-col flex-1 max-w-2xl w-full mx-auto px-8 sm:px-16 py-24">
-			<div className="flex flex-col flex-shrink-0 sm:flex-row items-center justify-between py-24">
+			<div className="flex flex-col flex-shrink-0 sm:flex-row items-center justify-between pt-64">
 					<FormControl className="flex w-full sm:w-320 mx-16" variant="outlined">
 						<InputLabel htmlFor="category-label-placeholder"> Category </InputLabel>
 						<Select
@@ -124,9 +131,12 @@ function Courses(props) {
 				</div>
 				{useMemo(
 					() =>
-						filteredData &&
-						(filteredData.length && (
-							<FuseAnimateGroup
+						{
+							if(!filteredData || !filteredData.length){
+								return undefined
+							}
+							return (
+								<FuseAnimateGroup
 								enter={{
 									animation: 'transition.slideUpBigIn'
 								}}
@@ -183,7 +193,8 @@ function Courses(props) {
 				)})
 			}
 								</FuseAnimateGroup>
-						)),
+							)
+						},
 					[categories, filteredData, theme.palette]
 				)}
 			</div>
