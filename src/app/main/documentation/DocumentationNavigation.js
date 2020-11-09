@@ -1,9 +1,11 @@
+import { authRoles } from 'app/auth';
 import FuseComponentsNavigation from './fuse-components/FuseComponentsNavigation';
 import MaterialUIComponentsNavigation from './material-ui-components/MaterialUIComponentsNavigation';
 import ThirdPartyComponentsNavigation from './third-party-components/ThirdPartyComponentsNavigation';
 
 const DocumentationNavigation = {
 	id: 'documentation',
+	auth: authRoles.user,
 	title: 'Documentation',
 	type: 'group',
 	icon: 'star',

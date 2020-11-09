@@ -16,7 +16,8 @@ import Error500PageConfig from './errors/500/Error500PageConfig';
 import FaqPageConfig from './faq/FaqPageConfig';
 import CompactInvoicePageConfig from './invoices/compact/CompactInvoicePageConfig';
 import ModernInvoicePageConfig from './invoices/modern/ModernInvoicePageConfig';
-import KnowledgeBasePageConfig from './knowledge-base/KnowledgeBaseConfig';
+import ProjectsPageConfig from './projects/ProjectsPageConfig';
+import ConceptsPageConfig from './concepts/ConceptsConfig';
 import MaintenancePageConfig from './maintenance/MaintenancePageConfig';
 import PricingStyle1PageConfig from './pricing/style-1/PricingStyle1PageConfig';
 import PricingStyle2PageConfig from './pricing/style-2/PricingStyle2PageConfig';
@@ -51,7 +52,8 @@ const pagesConfigs = [
 	ClassicSearchPageConfig,
 	ModernSearchPageConfig,
 	FaqPageConfig,
-	KnowledgeBasePageConfig
+	ProjectsPageConfig,
+	ConceptsPageConfig,
 ];
 
 export default pagesConfigs;

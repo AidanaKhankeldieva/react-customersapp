@@ -40,7 +40,7 @@ function KnowledgeBasePage() {
 	});
 
 	useEffect(() => {
-		axios.get('/api/knowledge-base').then(res => {
+		axios.get('/api/projects').then(res => {
 			setData(res.data);
 		});
 	}, []);

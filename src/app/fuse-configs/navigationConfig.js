@@ -17,6 +17,7 @@ const navigationConfig = [
 		translate: 'DASHBOARDS',
 		type: 'collapse',
 		icon: 'dashboard',
+		auth: authRoles.user,
 		children: [
 			{
 				id: 'analytics-dashboard',
@@ -38,6 +39,7 @@ const navigationConfig = [
 		translate: 'CALENDAR',
 		type: 'item',
 		icon: 'today',
+		auth: authRoles.user,
 		url: '/apps/calendar'
 	},
 	/* {
@@ -107,6 +109,7 @@ const navigationConfig = [
 		}
 	}, */
 	{
+		auth: authRoles.user,
 		id: 'todo',
 		title: 'To-Do',
 		translate: 'TODO',
@@ -128,6 +131,7 @@ const navigationConfig = [
 		url: '/apps/file-manager'
 	}, */
 	{
+		auth: authRoles.user,
 		id: 'students',
 		title: 'Students',
 		translate: 'Students',
@@ -136,6 +140,7 @@ const navigationConfig = [
 		url: '/apps/students/all'
 	},
 	{
+		auth: authRoles.user,
 		id: 'chat',
 		title: 'Chat',
 		translate: 'CHAT',
@@ -165,6 +170,7 @@ const navigationConfig = [
 		url: '/apps/notes'
 	} */
 	{
+		auth: authRoles.user,
 		id: 'pages',
 		title: 'Pages',
 		type: 'group',
@@ -283,6 +289,7 @@ const navigationConfig = [
 				]
 			}, */
 			{
+				auth: authRoles.user,
 				id: 'invoice',
 				title: 'Invoice',
 				type: 'collapse',
@@ -370,15 +377,25 @@ const navigationConfig = [
 				url: '/pages/faq'
 			}, */
 			{
-				id: 'knowledge-base',
-				title: 'Snippets',
+				auth: authRoles.user,
+				id: 'projects',
+				title: 'Projects',
 				type: 'item',
 				icon: 'import_contacts',
-				url: '/pages/knowledge-base'
+				url: '/pages/projects'
+			},
+			{
+				auth: authRoles.user,
+				id: 'concepts',
+				title: 'Concepts',
+				type: 'item',
+				icon: 'import_contacts',
+				url: '/pages/concepts'
 			}
 		]
 	},
 	{
+		auth: authRoles.user,
 		id: 'user-interface',
 		title: 'User Interface',
 		type: 'group',

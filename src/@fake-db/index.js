@@ -9,7 +9,7 @@ import './db/faq-db';
 import './db/file-manager-db';
 import './db/icons-db';
 import './db/invoices-db';
-import './db/knowledge-base-db';
+import './db/projects-db';
 import './db/mail-db';
 import './db/notes-db';
 import './db/profile-db';

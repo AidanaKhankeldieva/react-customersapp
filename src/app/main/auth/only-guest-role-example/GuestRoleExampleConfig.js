@@ -12,7 +12,11 @@ const GuestRoleExampleConfig = {
 		{
 			path: '/auth/guest-role-example',
 			component: GuestRoleExample
-		}
+		},
+		{
+			path: '/enrollment',
+			component: GuestRoleExample
+		},
 	]
 };
 

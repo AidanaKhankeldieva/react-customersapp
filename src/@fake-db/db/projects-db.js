@@ -3,8 +3,8 @@ import mock from '../mock';
 const knowledgeBaseDB = [
 	{
 		id: '1',
-		title: 'Your Account',
-		path: '/pages/knowledge-base',
+		title: 'HTML / CSS',
+		path: '/pages/projects',
 		articlesCount: 17,
 		featuredArticles: [
 			{
@@ -41,7 +41,7 @@ const knowledgeBaseDB = [
 	},
 	{
 		id: '2',
-		title: 'Selling',
+		title: 'DOM',
 		path: '/pages/knowledge-base',
 		articlesCount: 12,
 		featuredArticles: [
@@ -79,8 +79,8 @@ const knowledgeBaseDB = [
 	},
 	{
 		id: '3',
-		title: 'Buying',
-		path: '/pages/knowledge-base',
+		title: 'React',
+		path: '/pages/projects',
 		articlesCount: 19,
 		featuredArticles: [
 			{
@@ -118,7 +118,7 @@ const knowledgeBaseDB = [
 	{
 		id: '4',
 		title: 'Item Support',
-		path: '/pages/knowledge-base',
+		path: '/pages/projects',
 		articlesCount: 24,
 		featuredArticles: [
 			{
@@ -155,6 +155,6 @@ const knowledgeBaseDB = [
 	}
 ];
 
-mock.onGet('/api/knowledge-base').reply(config => {
+mock.onGet('/api/projects').reply(config => {
 	return [200, knowledgeBaseDB];
 });
